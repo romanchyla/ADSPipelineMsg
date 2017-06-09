@@ -1,5 +1,8 @@
 from msg import Msg
-from protobuf import full_record_pb2
+try:
+    from google.protobuf import full_record_pb2
+except ImportError:
+    from protobuf import full_record_pb2
 
 class FullRecord(Msg):
 
