@@ -5,7 +5,7 @@ class Msg(object):
         self._data = None
 
     @classmethod
-    def adsbuffer_deserializer(cls, data):
+    def deserializer(cls, data):
         """
         Receives a serialized protocol buffer message and returns an object.
         """
@@ -14,16 +14,22 @@ class Msg(object):
         return record
 
     @classmethod
-    def adsbuffer_serializer(cls, record):
+    def serializer(cls, record):
         """
         Receives an object and return a serialized protocol buffer message.
         """
-        return record.SerializeToString()
+        return record.serialize()
 
 
-    def SerializeToString(self):
+    def serialize(self):
         """
         Returns a serialized protocol buffer message
         """
         return self._data.SerializeToString()
 
+    def is_valid(self):
+        return self._data.IsInitialized()
+
+    @property
+    def data(self):
+        return self._data
