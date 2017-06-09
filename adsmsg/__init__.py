@@ -1,1 +1,1 @@
-from full_record import FullRecord
+from bibrecord import BibRecord
