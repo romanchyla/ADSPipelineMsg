@@ -1,0 +1,177 @@
+syntax = "proto2";
+
+package adsmsg;
+
+message Record {
+    required string bibcode = 1;
+    required string JSON_fingerprint = 2;
+    required Metadata metadata = 3;
+    required Text text = 4;
+
+    message Metadata {
+        optional General general = 1;
+        optional Properties properties = 2;
+        repeated References references = 3;
+        optional Relations relations = 4;
+
+        message General {
+            repeated string arxivcategories = 1;
+            repeated Keyword keywords = 2;
+            repeated Title titles = 3;
+            repeated Abstract abstracts = 4;
+            repeated Author author = 5;
+            repeated Publication publications = 6;
+            // We need a structure to maintain alternate publication venues
+            // This is where we'd put publication info that we have handled with
+            // alternate bibcodes (but not _all_ alternate bibcodes, which makes 
+            // it difficult to deal with).  We need this medatadata for two reasons:
+            // 1. so we can create complete output when required (e.g. bibtex)
+            // 2. so we can resolve references made to the alternate venue (more important)
+            // To be reviewed by CSG, etc.
+            repeated Publication altpublications = 7;
+            optional Content conf_metadata = 8;
+            repeated Content pubnote = 9;
+            repeated Content isbns = 10;
+            repeated Content issns = 11;
+            repeated Content doi = 12;
+            repeated Content copyright = 13;
+            repeated Content comment = 14;
+
+            message Keyword {
+                optional string origin = 1;
+                optional string type = 2;
+                optional string channel = 3;
+                optional string original = 4;
+                optional string normalized = 5;
+            }
+
+            message Title {
+                optional string lang = 1;
+                optional string text = 2;
+            }
+
+            message Abstract {
+                optional string origin = 1;
+                optional string long = 2;
+                optional string text = 3;
+            }
+
+            message Author {
+                optional string number = 1;
+                optional string type = 2;
+                //-affiliations are currently combined to a single long string. Is splitting on ";" correct to uncombine?
+                // ...Or, should we keep the current implementation of 1 author-> 1 affiliation, where affiliation is a long string?
+                repeated string affiliations = 3;
+                repeated string emails = 4;
+                optional string orcid = 5;
+                optional AuthorName name = 6;
+
+                message AuthorName {
+                    optional string native = 1;
+                    optional string western = 2;
+                    optional string normalized = 3;
+                }
+            }
+
+            message Publication {
+                optional string origin = 1;
+                optional string page = 2;
+                optional string page_last = 3;
+                optional string page_range = 4; // somewhat redundant, but there are weird cases (e.g. STI) where it's not just "firstpage-lastpage"
+                optional string page_count = 5; // number of pages (int)
+                optional string electronic_id = 6; // usually populated when page is null, but not always
+                optional string volume = 7;
+                optional string issue = 8;
+                optional PublicationName name = 9;
+                repeated PublicationDate dates = 10;
+
+                message PublicationName {
+                    optional string type = 1;
+                    optional string canonical = 2;
+                }
+
+                message PublicationDate {
+                    optional string type = 1;
+                    optional string content = 2;
+                }
+            }
+
+        }
+
+        message Properties {
+            repeated Content databases = 1;
+            optional Content doctype = 2;
+            repeated Content bibgroups = 3;
+            repeated Content associates = 4;
+            repeated Content data_sources = 5;
+            repeated Content vizier_tables = 6;
+            optional bool openaccess = 7;
+            optional bool ocrabstract = 8;
+            optional bool private = 9;
+            optional bool refereed = 10;
+            optional bool ads_openaccess = 11;
+            optional bool eprint_openaccess = 12;
+            optional bool pub_openaccess = 13;
+        }
+
+        message References {
+            optional string origin = 1;
+            optional string bibcode = 2;
+            optional string doi = 3;
+            optional string score = 4;
+            optional string extension = 5;
+            optional string content = 6;
+        }
+
+        message Relations {
+            repeated Preprint preprints = 1;
+            repeated AlternateRelation alternates = 2;
+            repeated Link links = 3;
+
+            message Preprint {
+                optional string origin = 1;
+                optional string ecode = 2;
+                optional string content = 3;
+            }
+
+            message AlternateRelation {
+                optional string origin = 1;
+                optional string type = 2;
+                optional string content = 3;
+            }
+
+            message Link {
+                optional string origin = 1;
+                optional string type = 2;
+                optional string url = 3;
+                optional string title = 4;
+                optional string count = 5;
+                optional string access = 6;
+            }
+        }
+    }
+
+    message Text {
+        optional Body body = 1;
+        optional Acknowledgments acknowledgments = 2;
+
+        message Body {
+            optional string content = 1;
+            optional string provider = 2;
+            optional string language = 3;
+            optional string modtime = 4;
+        }
+
+        message Acknowledgments {
+            optional string content = 1;
+            optional string provider = 2;
+            optional string modtime = 3;
+        }
+    }
+
+    message Content {
+        optional string origin = 1;
+        optional string content = 2;
+    }
+
+}
