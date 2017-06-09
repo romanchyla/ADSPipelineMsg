@@ -1,9 +1,5 @@
 from msg import Msg
-
-try:
-    from google.protobuf import bibrecord_pb2
-except ImportError:
-    from protobuf import bibrecord_pb2
+from .protobuf import bibrecord_pb2
 
 class BibRecord(Msg):
 
