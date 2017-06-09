@@ -1,2 +1,1 @@
-
-from protobuf import full_record_pb2
+from full_record import FullRecord

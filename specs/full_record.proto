@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package adsmsg;
 
-message Record {
+message FullRecord {
     required string bibcode = 1;
     required string JSON_fingerprint = 2;
     required Metadata metadata = 3;
