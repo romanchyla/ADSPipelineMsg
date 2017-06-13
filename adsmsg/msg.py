@@ -4,6 +4,9 @@ class Msg(object):
     def __init__(self):
         self._data = None
 
+    def __str__(self):
+        return self._data.SerializeToString()
+
     @classmethod
     def deserializer(cls, data):
         """

@@ -38,6 +38,8 @@ class TestFullRecord(unittest.TestCase):
         bibrecord.data.text.body.content = content
         data = BibRecord.serializer(bibrecord)
         self.assertEqual(data, '\n\x13{0}\x12\x04{1}\x1a0\n.\n,{2}"\x1c\n\x1a\n\x18{3}'.format(bibcode, JSON_fingerprint, arxiv_category, content))
+        data_str = str(bibrecord)
+        self.assertEqual(data, data_str)
 
         recovered_bibrecord = BibRecord.deserializer(data)
         self.assertTrue(recovered_bibrecord.is_valid())
