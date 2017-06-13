@@ -30,6 +30,8 @@ docker build -t adsmsg .
 docker run -it --name adsmsg adsmsg
 ```
 
+Every time the protocol buffers specifications are changed, 'make' should be run to regenerate the python code.
+
 ### Testing
 
 Travis will run tests automatically. You can manually run them in your machine with:

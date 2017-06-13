@@ -5,7 +5,7 @@ import unittest
 from adsmsg import BibRecord
 
 
-class TestFullRecord(unittest.TestCase):
+class TestBibRecord(unittest.TestCase):
 
     def setUp(self):
         unittest.TestCase.setUp(self)
