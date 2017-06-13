@@ -1,2 +1,2 @@
-from bibrecord import BibRecord
-from denormalized_record import DenormalizedRecord
+from .bibrecord import BibRecord
+from .denormalized_record import DenormalizedRecord

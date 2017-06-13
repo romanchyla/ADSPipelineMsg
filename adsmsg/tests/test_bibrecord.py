@@ -25,6 +25,7 @@ class TestBibRecord(unittest.TestCase):
         bibrecord.data.text.body.content = "Article..."
         self.assertTrue(bibrecord.is_valid())
 
+
     def test_serialization(self):
         bibcode = "2017IAUS..325..341B"
         JSON_fingerprint = "JSON"
@@ -36,6 +37,8 @@ class TestBibRecord(unittest.TestCase):
         bibrecord.data.JSON_fingerprint = JSON_fingerprint
         bibrecord.data.metadata.general.arxivcategories.append(arxiv_category)
         bibrecord.data.text.body.content = content
+        
+        
         data = BibRecord.serializer(bibrecord)
         self.assertEqual(data, '\n\x13{0}\x12\x04{1}\x1a0\n.\n,{2}"\x1c\n\x1a\n\x18{3}'.format(bibcode, JSON_fingerprint, arxiv_category, content))
         data_str = str(bibrecord)
