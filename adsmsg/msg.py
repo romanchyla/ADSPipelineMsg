@@ -15,7 +15,6 @@ class Msg(object):
     def __str__(self):
         return str(self._data)
 
-    
     def __getattr__(self, key):
         if key == '_data':
             return self._data
@@ -52,9 +51,11 @@ class Msg(object):
     def is_valid(self):
         return self._data.IsInitialized()
 
+
     @property
     def data(self):
         return self._data
-    
+
+
     def toJSON(self):
         return json_format.MessageToJson(self.__dict__['_data'])

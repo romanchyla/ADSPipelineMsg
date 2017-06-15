@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package adsmsg;
+
+message NonBibRecord {
+    string bibcode = 1;
+    int32 id = 2;
+    repeated string authors = 3;
+    bool refereed = 4;
+    repeated string simbad_objects = 5;
+    repeated string grants = 6;
+    repeated string citations = 7;
+    float boost = 8;
+    int32 citation_count = 9;
+    int32 read_count = 10;
+    int32 norm_cites = 11;
+    repeated int32 readers = 12;
+    repeated int32 downloads = 13;
+    repeated int32 reads = 14;
+    repeated string refernce = 15;
+}    
+    

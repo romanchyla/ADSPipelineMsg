@@ -32,7 +32,8 @@ class TestDenormalizedRecord(unittest.TestCase):
         data = DenormalizedRecord.serializer(denormalized_record)
         self.assertEqual(data, '\n\x19{0}:\x07{1}@\x01'.format(abstract, author))
         data_str = str(denormalized_record)
-        self.assertEqual(data, data_str)
+        self.assertEqual(data_str, 'abstract: "{0}"\nauthor: "{1}"\nauthor_count: {2}\n'.format(abstract, author, author_count))
+        self.assertNotEqual(data, data_str)
 
         recovered_bibrecord = DenormalizedRecord.deserializer(data)
         self.assertTrue(recovered_bibrecord.is_valid())
