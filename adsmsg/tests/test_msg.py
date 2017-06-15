@@ -10,8 +10,6 @@ class TestMsg(unittest.TestCase):
 
     def setUp(self):
         unittest.TestCase.setUp(self)
-        self.proj_home = os.path.join(os.path.dirname(__file__), '../..')
-
 
     def tearDown(self):
         unittest.TestCase.tearDown(self)
@@ -23,9 +21,11 @@ class TestMsg(unittest.TestCase):
         self.assertEqual(b.bibcode, 'bibcode')
         self.assertEqual(b.data.bibcode, 'bibcode')
         
+        # acces/set attributes directly
         b.bibcode = 'foobar'
         self.assertEqual(b.bibcode, 'foobar')
         self.assertEqual(b.data.bibcode, 'foobar')
+        
 
 
 

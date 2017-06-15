@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package adsmsg;
+
+message OrcidClaims {
+    required string bibcode = 1;
+    
+    // list of author names: ['Einstein, A', 'Socrates', 'Munger, C']
+    repeated string authors = 2;
+    
+    // claims, where values are ORCiD id strings: ['-', '-', '0000-0003-3041-2092', '-']
+    //  - verified: 'verified claims' from ADS users (who gave up permission to publish claim history)
+    //  - unverified:  the rest
+    repeated string verified = 3;
+    repeated string unverified = 4;
+
+}
