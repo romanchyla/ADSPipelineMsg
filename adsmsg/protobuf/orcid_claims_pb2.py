@@ -18,8 +18,8 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='orcid_claims.proto',
   package='adsmsg',
-  syntax='proto2',
-  serialized_pb=_b('\n\x12orcid_claims.proto\x12\x06\x61\x64smsg\"U\n\x0bOrcidClaims\x12\x0f\n\x07\x62ibcode\x18\x01 \x02(\t\x12\x0f\n\x07\x61uthors\x18\x02 \x03(\t\x12\x10\n\x08verified\x18\x03 \x03(\t\x12\x12\n\nunverified\x18\x04 \x03(\t')
+  syntax='proto3',
+  serialized_pb=_b('\n\x12orcid_claims.proto\x12\x06\x61\x64smsg\"U\n\x0bOrcidClaims\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x0f\n\x07\x61uthors\x18\x02 \x03(\t\x12\x10\n\x08verified\x18\x03 \x03(\t\x12\x12\n\nunverified\x18\x04 \x03(\tb\x06proto3')
 )
 
 
@@ -34,7 +34,7 @@ _ORCIDCLAIMS = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='bibcode', full_name='adsmsg.OrcidClaims.bibcode', index=0,
-      number=1, type=9, cpp_type=9, label=2,
+      number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -68,7 +68,7 @@ _ORCIDCLAIMS = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],

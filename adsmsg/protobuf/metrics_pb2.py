@@ -18,8 +18,8 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='metrics.proto',
   package='adsmsg',
-  syntax='proto2',
-  serialized_pb=_b('\n\rmetrics.proto\x12\x06\x61\x64smsg\"\xe5\x02\n\rMetricsRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x02(\t\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x10\n\x08refereed\x18\x03 \x01(\x08\x12\x14\n\x0crn_citations\x18\x04 \x01(\x02\x12\x18\n\x10rn_citation_data\x18\x05 \x01(\t\x12\x11\n\tdownloads\x18\x06 \x03(\x05\x12\r\n\x05reads\x18\x07 \x03(\x05\x12\x14\n\x0c\x61n_citations\x18\x08 \x01(\x02\x12\x1d\n\x15refereed_citation_num\x18\t \x01(\x05\x12\x14\n\x0c\x63itation_num\x18\n \x01(\x05\x12\x15\n\rreference_num\x18\x0b \x01(\x05\x12\x11\n\tcitations\x18\x0c \x03(\t\x12\x1a\n\x12refereed_citations\x18\r \x03(\t\x12\x12\n\nauthor_num\x18\x0e \x01(\x05\x12\x1d\n\x15\x61n_refereed_citations\x18\x0f \x01(\x02\x12\x0f\n\x07modtime\x18\x10 \x01(\t')
+  syntax='proto3',
+  serialized_pb=_b('\n\rmetrics.proto\x12\x06\x61\x64smsg\"\xe5\x02\n\rMetricsRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x10\n\x08refereed\x18\x03 \x01(\x08\x12\x14\n\x0crn_citations\x18\x04 \x01(\x02\x12\x18\n\x10rn_citation_data\x18\x05 \x01(\t\x12\x11\n\tdownloads\x18\x06 \x03(\x05\x12\r\n\x05reads\x18\x07 \x03(\x05\x12\x14\n\x0c\x61n_citations\x18\x08 \x01(\x02\x12\x1d\n\x15refereed_citation_num\x18\t \x01(\x05\x12\x14\n\x0c\x63itation_num\x18\n \x01(\x05\x12\x15\n\rreference_num\x18\x0b \x01(\x05\x12\x11\n\tcitations\x18\x0c \x03(\t\x12\x1a\n\x12refereed_citations\x18\r \x03(\t\x12\x12\n\nauthor_num\x18\x0e \x01(\x05\x12\x1d\n\x15\x61n_refereed_citations\x18\x0f \x01(\x02\x12\x0f\n\x07modtime\x18\x10 \x01(\tb\x06proto3')
 )
 
 
@@ -34,7 +34,7 @@ _METRICSRECORD = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='bibcode', full_name='adsmsg.MetricsRecord.bibcode', index=0,
-      number=1, type=9, cpp_type=9, label=2,
+      number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -152,7 +152,7 @@ _METRICSRECORD = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
