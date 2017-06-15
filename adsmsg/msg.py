@@ -1,3 +1,4 @@
+from google.protobuf import json_format
 
 class Msg(object):
 
@@ -5,11 +6,14 @@ class Msg(object):
         self.__dict__['_data'] = instance
         if kwargs:
             for k, v in kwargs.items():
-                setattr(instance, k, v)
+                if isinstance(v, list) or isinstance(v, tuple):
+                    getattr(instance, k).extend(v) #TODO(rca): use some smarter reflection
+                else:
+                    setattr(instance, k, v)
 
 
     def __str__(self):
-        return self._data.SerializeToString()
+        return str(self._data)
 
     
     def __getattr__(self, key):
@@ -51,3 +55,6 @@ class Msg(object):
     @property
     def data(self):
         return self._data
+    
+    def toJSON(self):
+        return json_format.MessageToJson(self.__dict__['_data'])
