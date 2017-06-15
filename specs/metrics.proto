@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package adsmsg;
+
+message MetricsRecord {
+    required string bibcode = 1;
+	optional int32 id = 2;
+	optional bool refereed = 3;
+	optional float rn_citations = 4;
+	optional string rn_citation_data = 5; // actually json
+	repeated int32 downloads = 6;
+	repeated int32 reads = 7;
+	optional float an_citations = 8;
+	optional int32 refereed_citation_num = 9;
+	optional int32 citation_num = 10;
+	optional int32 reference_num = 11;
+	repeated string citations = 12;
+	repeated string refereed_citations = 13;
+	optional int32 author_num = 14;
+	optional float an_refereed_citations = 15;
+	optional string modtime = 16;
+}
