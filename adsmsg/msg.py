@@ -34,20 +34,34 @@ class Msg(object):
         return record
 
 
-    @classmethod
-    def serializer(cls, record):
-        """
-        Receives an object and return a serialized protocol buffer message.
-        """
-        return record.serialize()
-
-
     def serialize(self):
         """
         Returns a serialized protocol buffer message
         """
         return self._data.SerializeToString()
 
+
+    def dump(self):
+        """
+        Returns (class, serialized-data)
+        """
+        return ('%s.%s' % (self.__class__.__module__, self.__class__.__name__), self.serialize())
+
+
+    @staticmethod
+    def loads(cls, serialized_data):
+        """
+        Creates a new instance from the product of self.dump()
+        """
+        if isinstance(cls, basestring):
+            parts = cls.split('.')
+            m = __import__('.'.join(parts[0:-1]))
+            cls = getattr(m, parts[-1])
+        record = cls()
+        record._data.ParseFromString(serialized_data)
+        return record
+
+    
     def is_valid(self):
         return self._data.IsInitialized()
 

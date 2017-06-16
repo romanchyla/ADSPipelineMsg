@@ -13,5 +13,4 @@ message OrcidClaims {
     //  - unverified:  the rest
     repeated string verified = 3;
     repeated string unverified = 4;
-
 }

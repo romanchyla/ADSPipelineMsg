@@ -26,7 +26,17 @@ class TestMsg(unittest.TestCase):
         self.assertEqual(b.bibcode, 'foobar')
         self.assertEqual(b.data.bibcode, 'foobar')
         
+    
+    def test_serializer(self):
+        b = BibRecord(bibcode='bibcode')
+        cls, data = b.dump()
+        
+        self.assertEqual('adsmsg.bibrecord.BibRecord', cls)
+        
+        b2 = Msg.loads(cls, data)
+        self.assertEqual(b2.bibcode, b.bibcode)
 
+    
 
 
 
