@@ -160,7 +160,40 @@ _METRICSRECORD = _descriptor.Descriptor(
   serialized_end=383,
 )
 
+
+_METRICSRECORDLIST = _descriptor.Descriptor(
+  name='MetricsRecordList',
+  full_name='adsmsg.MetricsRecordList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='metrics_records', full_name='adsmsg.MetricsRecordList.metrics_records', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=385,
+  serialized_end=452,
+)
+
+_METRICSRECORDLIST.fields_by_name['metrics_records'].message_type = _METRICSRECORD
 DESCRIPTOR.message_types_by_name['MetricsRecord'] = _METRICSRECORD
+DESCRIPTOR.message_types_by_name['MetricsRecordList'] = _METRICSRECORDLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 MetricsRecord = _reflection.GeneratedProtocolMessageType('MetricsRecord', (_message.Message,), dict(
@@ -169,6 +202,13 @@ MetricsRecord = _reflection.GeneratedProtocolMessageType('MetricsRecord', (_mess
   # @@protoc_insertion_point(class_scope:adsmsg.MetricsRecord)
   ))
 _sym_db.RegisterMessage(MetricsRecord)
+
+MetricsRecordList = _reflection.GeneratedProtocolMessageType('MetricsRecordList', (_message.Message,), dict(
+  DESCRIPTOR = _METRICSRECORDLIST,
+  __module__ = 'metrics_pb2'
+  # @@protoc_insertion_point(class_scope:adsmsg.MetricsRecordList)
+  ))
+_sym_db.RegisterMessage(MetricsRecordList)
 
 
 # @@protoc_insertion_point(module_scope)

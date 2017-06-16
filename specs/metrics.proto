@@ -3,7 +3,7 @@ syntax = "proto3";
 package adsmsg;
 
 message MetricsRecord {
-    string bibcode = 1;
+	string bibcode = 1;
 	int32 id = 2;
 	bool refereed = 3;
 	float rn_citations = 4;
@@ -19,4 +19,8 @@ message MetricsRecord {
 	int32 author_num = 14;
 	float an_refereed_citations = 15;
 	string modtime = 16;
+}
+
+message MetricsRecordList {
+	repeated MetricsRecord metrics_records = 1;
 }

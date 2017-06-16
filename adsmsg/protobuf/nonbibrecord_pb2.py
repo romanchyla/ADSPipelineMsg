@@ -153,7 +153,40 @@ _NONBIBRECORD = _descriptor.Descriptor(
   serialized_end=316,
 )
 
+
+_NONBIBRECORDLIST = _descriptor.Descriptor(
+  name='NonBibRecordList',
+  full_name='adsmsg.NonBibRecordList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nonbib_records', full_name='adsmsg.NonBibRecordList.nonbib_records', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=318,
+  serialized_end=382,
+)
+
+_NONBIBRECORDLIST.fields_by_name['nonbib_records'].message_type = _NONBIBRECORD
 DESCRIPTOR.message_types_by_name['NonBibRecord'] = _NONBIBRECORD
+DESCRIPTOR.message_types_by_name['NonBibRecordList'] = _NONBIBRECORDLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 NonBibRecord = _reflection.GeneratedProtocolMessageType('NonBibRecord', (_message.Message,), dict(
@@ -162,6 +195,13 @@ NonBibRecord = _reflection.GeneratedProtocolMessageType('NonBibRecord', (_messag
   # @@protoc_insertion_point(class_scope:adsmsg.NonBibRecord)
   ))
 _sym_db.RegisterMessage(NonBibRecord)
+
+NonBibRecordList = _reflection.GeneratedProtocolMessageType('NonBibRecordList', (_message.Message,), dict(
+  DESCRIPTOR = _NONBIBRECORDLIST,
+  __module__ = 'nonbibrecord_pb2'
+  # @@protoc_insertion_point(class_scope:adsmsg.NonBibRecordList)
+  ))
+_sym_db.RegisterMessage(NonBibRecordList)
 
 
 # @@protoc_insertion_point(module_scope)
