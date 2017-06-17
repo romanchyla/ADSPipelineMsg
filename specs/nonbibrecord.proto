@@ -19,4 +19,7 @@ message NonBibRecord {
     repeated int32 reads = 14;
     repeated string refernce = 15;
 }    
-    
+
+message NonBibRecordList {
+	repeated NonBibRecord nonbib_records = 1;
+}

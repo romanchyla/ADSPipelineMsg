@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='metrics.proto',
   package='adsmsg',
   syntax='proto3',
-  serialized_pb=_b('\n\rmetrics.proto\x12\x06\x61\x64smsg\"\xe5\x02\n\rMetricsRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x10\n\x08refereed\x18\x03 \x01(\x08\x12\x14\n\x0crn_citations\x18\x04 \x01(\x02\x12\x18\n\x10rn_citation_data\x18\x05 \x01(\t\x12\x11\n\tdownloads\x18\x06 \x03(\x05\x12\r\n\x05reads\x18\x07 \x03(\x05\x12\x14\n\x0c\x61n_citations\x18\x08 \x01(\x02\x12\x1d\n\x15refereed_citation_num\x18\t \x01(\x05\x12\x14\n\x0c\x63itation_num\x18\n \x01(\x05\x12\x15\n\rreference_num\x18\x0b \x01(\x05\x12\x11\n\tcitations\x18\x0c \x03(\t\x12\x1a\n\x12refereed_citations\x18\r \x03(\t\x12\x12\n\nauthor_num\x18\x0e \x01(\x05\x12\x1d\n\x15\x61n_refereed_citations\x18\x0f \x01(\x02\x12\x0f\n\x07modtime\x18\x10 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\rmetrics.proto\x12\x06\x61\x64smsg\"\xe5\x02\n\rMetricsRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x10\n\x08refereed\x18\x03 \x01(\x08\x12\x14\n\x0crn_citations\x18\x04 \x01(\x02\x12\x18\n\x10rn_citation_data\x18\x05 \x01(\t\x12\x11\n\tdownloads\x18\x06 \x03(\x05\x12\r\n\x05reads\x18\x07 \x03(\x05\x12\x14\n\x0c\x61n_citations\x18\x08 \x01(\x02\x12\x1d\n\x15refereed_citation_num\x18\t \x01(\x05\x12\x14\n\x0c\x63itation_num\x18\n \x01(\x05\x12\x15\n\rreference_num\x18\x0b \x01(\x05\x12\x11\n\tcitations\x18\x0c \x03(\t\x12\x1a\n\x12refereed_citations\x18\r \x03(\t\x12\x12\n\nauthor_num\x18\x0e \x01(\x05\x12\x1d\n\x15\x61n_refereed_citations\x18\x0f \x01(\x02\x12\x0f\n\x07modtime\x18\x10 \x01(\t\"C\n\x11MetricsRecordList\x12.\n\x0fmetrics_records\x18\x01 \x03(\x0b\x32\x15.adsmsg.MetricsRecordb\x06proto3')
 )
 
 
@@ -160,7 +160,40 @@ _METRICSRECORD = _descriptor.Descriptor(
   serialized_end=383,
 )
 
+
+_METRICSRECORDLIST = _descriptor.Descriptor(
+  name='MetricsRecordList',
+  full_name='adsmsg.MetricsRecordList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='metrics_records', full_name='adsmsg.MetricsRecordList.metrics_records', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=385,
+  serialized_end=452,
+)
+
+_METRICSRECORDLIST.fields_by_name['metrics_records'].message_type = _METRICSRECORD
 DESCRIPTOR.message_types_by_name['MetricsRecord'] = _METRICSRECORD
+DESCRIPTOR.message_types_by_name['MetricsRecordList'] = _METRICSRECORDLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 MetricsRecord = _reflection.GeneratedProtocolMessageType('MetricsRecord', (_message.Message,), dict(
@@ -169,6 +202,13 @@ MetricsRecord = _reflection.GeneratedProtocolMessageType('MetricsRecord', (_mess
   # @@protoc_insertion_point(class_scope:adsmsg.MetricsRecord)
   ))
 _sym_db.RegisterMessage(MetricsRecord)
+
+MetricsRecordList = _reflection.GeneratedProtocolMessageType('MetricsRecordList', (_message.Message,), dict(
+  DESCRIPTOR = _METRICSRECORDLIST,
+  __module__ = 'metrics_pb2'
+  # @@protoc_insertion_point(class_scope:adsmsg.MetricsRecordList)
+  ))
+_sym_db.RegisterMessage(MetricsRecordList)
 
 
 # @@protoc_insertion_point(module_scope)

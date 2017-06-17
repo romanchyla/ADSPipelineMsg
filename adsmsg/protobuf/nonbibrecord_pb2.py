@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='nonbibrecord.proto',
   package='adsmsg',
   syntax='proto3',
-  serialized_pb=_b('\n\x12nonbibrecord.proto\x12\x06\x61\x64smsg\"\x9d\x02\n\x0cNonBibRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x0f\n\x07\x61uthors\x18\x03 \x03(\t\x12\x10\n\x08refereed\x18\x04 \x01(\x08\x12\x16\n\x0esimbad_objects\x18\x05 \x03(\t\x12\x0e\n\x06grants\x18\x06 \x03(\t\x12\x11\n\tcitations\x18\x07 \x03(\t\x12\r\n\x05\x62oost\x18\x08 \x01(\x02\x12\x16\n\x0e\x63itation_count\x18\t \x01(\x05\x12\x12\n\nread_count\x18\n \x01(\x05\x12\x12\n\nnorm_cites\x18\x0b \x01(\x05\x12\x0f\n\x07readers\x18\x0c \x03(\x05\x12\x11\n\tdownloads\x18\r \x03(\x05\x12\r\n\x05reads\x18\x0e \x03(\x05\x12\x10\n\x08refernce\x18\x0f \x03(\tb\x06proto3')
+  serialized_pb=_b('\n\x12nonbibrecord.proto\x12\x06\x61\x64smsg\"\x9d\x02\n\x0cNonBibRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x0f\n\x07\x61uthors\x18\x03 \x03(\t\x12\x10\n\x08refereed\x18\x04 \x01(\x08\x12\x16\n\x0esimbad_objects\x18\x05 \x03(\t\x12\x0e\n\x06grants\x18\x06 \x03(\t\x12\x11\n\tcitations\x18\x07 \x03(\t\x12\r\n\x05\x62oost\x18\x08 \x01(\x02\x12\x16\n\x0e\x63itation_count\x18\t \x01(\x05\x12\x12\n\nread_count\x18\n \x01(\x05\x12\x12\n\nnorm_cites\x18\x0b \x01(\x05\x12\x0f\n\x07readers\x18\x0c \x03(\x05\x12\x11\n\tdownloads\x18\r \x03(\x05\x12\r\n\x05reads\x18\x0e \x03(\x05\x12\x10\n\x08refernce\x18\x0f \x03(\t\"@\n\x10NonBibRecordList\x12,\n\x0enonbib_records\x18\x01 \x03(\x0b\x32\x14.adsmsg.NonBibRecordb\x06proto3')
 )
 
 
@@ -153,7 +153,40 @@ _NONBIBRECORD = _descriptor.Descriptor(
   serialized_end=316,
 )
 
+
+_NONBIBRECORDLIST = _descriptor.Descriptor(
+  name='NonBibRecordList',
+  full_name='adsmsg.NonBibRecordList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nonbib_records', full_name='adsmsg.NonBibRecordList.nonbib_records', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=318,
+  serialized_end=382,
+)
+
+_NONBIBRECORDLIST.fields_by_name['nonbib_records'].message_type = _NONBIBRECORD
 DESCRIPTOR.message_types_by_name['NonBibRecord'] = _NONBIBRECORD
+DESCRIPTOR.message_types_by_name['NonBibRecordList'] = _NONBIBRECORDLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 NonBibRecord = _reflection.GeneratedProtocolMessageType('NonBibRecord', (_message.Message,), dict(
@@ -162,6 +195,13 @@ NonBibRecord = _reflection.GeneratedProtocolMessageType('NonBibRecord', (_messag
   # @@protoc_insertion_point(class_scope:adsmsg.NonBibRecord)
   ))
 _sym_db.RegisterMessage(NonBibRecord)
+
+NonBibRecordList = _reflection.GeneratedProtocolMessageType('NonBibRecordList', (_message.Message,), dict(
+  DESCRIPTOR = _NONBIBRECORDLIST,
+  __module__ = 'nonbibrecord_pb2'
+  # @@protoc_insertion_point(class_scope:adsmsg.NonBibRecordList)
+  ))
+_sym_db.RegisterMessage(NonBibRecordList)
 
 
 # @@protoc_insertion_point(module_scope)
