@@ -1,4 +1,6 @@
 from google.protobuf import json_format
+import json
+import base64
 
 class Msg(object):
 
@@ -73,3 +75,8 @@ class Msg(object):
 
     def toJSON(self):
         return json_format.MessageToJson(self.__dict__['_data'])
+    
+    def __json__(self):
+        """Serializer used by the Kombu/Celery."""
+        cls, data = self.dump()
+        return {'__adsmsg__':  (cls, base64.b64encode(data))}
