@@ -9,5 +9,5 @@ class MetricsRecord(Msg):
 
 class MetricsRecordList(Msg):
     
-    def __init__(self):        
+    def __init__(self, *args, **kwargs):        
         super(MetricsRecordList, self).__init__(metrics_pb2.MetricsRecordList(), args, kwargs)
