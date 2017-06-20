@@ -1,4 +1,6 @@
+from datetime import datetime
 from google.protobuf import json_format
+from google.protobuf import timestamp_pb2
 import json
 import base64
 
@@ -10,6 +12,12 @@ class Msg(object):
             for k, v in kwargs.items():
                 if isinstance(v, list) or isinstance(v, tuple):
                     getattr(instance, k).extend(v) #TODO(rca): use some smarter reflection
+                elif isinstance(v, dict):
+                    x = getattr(instance, k)
+                    for dk in v.keys():
+                         x[dk] = v[dk]
+                elif isinstance(v, datetime):
+                    getattr(instance, k).FromDatetime(v)
                 else:
                     setattr(instance, k, v)
 
