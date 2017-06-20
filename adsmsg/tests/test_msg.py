@@ -38,7 +38,8 @@ class TestMsg(unittest.TestCase):
         
         b2 = Msg.loads(cls, data)
         self.assertEqual(b2.bibcode, b.bibcode)
-        
+
+
     def test_higher_char(self):
         b = BibRecord(bibcode=u'\u01b5')
         cls, data = b.dump()
@@ -62,6 +63,11 @@ class TestMsg(unittest.TestCase):
         b2 = Msg.loads(cls, data2)
         self.assertEqual(b1.bibcode, u'\u01b5')
         self.assertEqual(b2.bibcode, u'\u01b5')
+        
+    
+    def test_toJSON(self):
+        b = BibRecord(bibcode=u'\u01b5')
+        print b.toJSON(), type(b.toJSON())
 
 
 if __name__ == '__main__':
