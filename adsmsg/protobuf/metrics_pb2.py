@@ -13,17 +13,115 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='metrics.proto',
   package='adsmsg',
   syntax='proto3',
-  serialized_pb=_b('\n\rmetrics.proto\x12\x06\x61\x64smsg\"\xe5\x02\n\rMetricsRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x10\n\x08refereed\x18\x03 \x01(\x08\x12\x14\n\x0crn_citations\x18\x04 \x01(\x02\x12\x18\n\x10rn_citation_data\x18\x05 \x01(\t\x12\x11\n\tdownloads\x18\x06 \x03(\x05\x12\r\n\x05reads\x18\x07 \x03(\x05\x12\x14\n\x0c\x61n_citations\x18\x08 \x01(\x02\x12\x1d\n\x15refereed_citation_num\x18\t \x01(\x05\x12\x14\n\x0c\x63itation_num\x18\n \x01(\x05\x12\x15\n\rreference_num\x18\x0b \x01(\x05\x12\x11\n\tcitations\x18\x0c \x03(\t\x12\x1a\n\x12refereed_citations\x18\r \x03(\t\x12\x12\n\nauthor_num\x18\x0e \x01(\x05\x12\x1d\n\x15\x61n_refereed_citations\x18\x0f \x01(\x02\x12\x0f\n\x07modtime\x18\x10 \x01(\t\"C\n\x11MetricsRecordList\x12.\n\x0fmetrics_records\x18\x01 \x03(\x0b\x32\x15.adsmsg.MetricsRecordb\x06proto3')
+  serialized_pb=_b('\n\rmetrics.proto\x12\x06\x61\x64smsg\x1a\x1fgoogle/protobuf/timestamp.proto\"i\n\x0f\x63itation_record\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x11\n\tauth_norm\x18\x02 \x01(\x02\x12\x0f\n\x07\x63ityear\x18\x03 \x01(\x05\x12\x0f\n\x07pubyear\x18\x04 \x01(\x05\x12\x10\n\x08ref_norm\x18\x05 \x01(\x02\"\x8d\x04\n\rMetricsRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x14\n\x0c\x61n_citations\x18\x02 \x01(\x02\x12\x1d\n\x15\x61n_refereed_citations\x18\x03 \x01(\x02\x12\x12\n\nauthor_num\x18\x04 \x01(\x05\x12\x14\n\x0c\x63itation_num\x18\x05 \x01(\x05\x12\x11\n\tcitations\x18\x06 \x03(\t\x12\x11\n\tdownloads\x18\x07 \x03(\x05\x12+\n\x07modtime\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05reads\x18\t \x03(\x05\x12\x10\n\x08refereed\x18\n \x01(\x08\x12\x1d\n\x15refereed_citation_num\x18\x0b \x01(\x05\x12\x1a\n\x12refereed_citations\x18\x0c \x03(\t\x12\x15\n\rreference_num\x18\r \x01(\x05\x12\x14\n\x0crn_citations\x18\x0e \x01(\x02\x12\x31\n\x10rn_citation_data\x18\x0f \x03(\x0b\x32\x17.adsmsg.citation_record\x12\x45\n\x11rn_citations_hist\x18\x10 \x03(\x0b\x32*.adsmsg.MetricsRecord.RnCitationsHistEntry\x1a\x36\n\x14RnCitationsHistEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\"C\n\x11MetricsRecordList\x12.\n\x0fmetrics_records\x18\x01 \x03(\x0b\x32\x15.adsmsg.MetricsRecordb\x06proto3')
+  ,
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
+
+
+
+
+_CITATION_RECORD = _descriptor.Descriptor(
+  name='citation_record',
+  full_name='adsmsg.citation_record',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='bibcode', full_name='adsmsg.citation_record.bibcode', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='auth_norm', full_name='adsmsg.citation_record.auth_norm', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='cityear', full_name='adsmsg.citation_record.cityear', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pubyear', full_name='adsmsg.citation_record.pubyear', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ref_norm', full_name='adsmsg.citation_record.ref_norm', index=4,
+      number=5, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=58,
+  serialized_end=163,
 )
 
 
-
+_METRICSRECORD_RNCITATIONSHISTENTRY = _descriptor.Descriptor(
+  name='RnCitationsHistEntry',
+  full_name='adsmsg.MetricsRecord.RnCitationsHistEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='adsmsg.MetricsRecord.RnCitationsHistEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='adsmsg.MetricsRecord.RnCitationsHistEntry.value', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=637,
+  serialized_end=691,
+)
 
 _METRICSRECORD = _descriptor.Descriptor(
   name='MetricsRecord',
@@ -40,114 +138,114 @@ _METRICSRECORD = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='id', full_name='adsmsg.MetricsRecord.id', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='refereed', full_name='adsmsg.MetricsRecord.refereed', index=2,
-      number=3, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='rn_citations', full_name='adsmsg.MetricsRecord.rn_citations', index=3,
-      number=4, type=2, cpp_type=6, label=1,
+      name='an_citations', full_name='adsmsg.MetricsRecord.an_citations', index=1,
+      number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='rn_citation_data', full_name='adsmsg.MetricsRecord.rn_citation_data', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='an_refereed_citations', full_name='adsmsg.MetricsRecord.an_refereed_citations', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='downloads', full_name='adsmsg.MetricsRecord.downloads', index=5,
-      number=6, type=5, cpp_type=1, label=3,
+      name='author_num', full_name='adsmsg.MetricsRecord.author_num', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='citation_num', full_name='adsmsg.MetricsRecord.citation_num', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='citations', full_name='adsmsg.MetricsRecord.citations', index=5,
+      number=6, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='reads', full_name='adsmsg.MetricsRecord.reads', index=6,
+      name='downloads', full_name='adsmsg.MetricsRecord.downloads', index=6,
       number=7, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='an_citations', full_name='adsmsg.MetricsRecord.an_citations', index=7,
-      number=8, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
+      name='modtime', full_name='adsmsg.MetricsRecord.modtime', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='refereed_citation_num', full_name='adsmsg.MetricsRecord.refereed_citation_num', index=8,
-      number=9, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='reads', full_name='adsmsg.MetricsRecord.reads', index=8,
+      number=9, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='citation_num', full_name='adsmsg.MetricsRecord.citation_num', index=9,
-      number=10, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='refereed', full_name='adsmsg.MetricsRecord.refereed', index=9,
+      number=10, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='reference_num', full_name='adsmsg.MetricsRecord.reference_num', index=10,
+      name='refereed_citation_num', full_name='adsmsg.MetricsRecord.refereed_citation_num', index=10,
       number=11, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='citations', full_name='adsmsg.MetricsRecord.citations', index=11,
+      name='refereed_citations', full_name='adsmsg.MetricsRecord.refereed_citations', index=11,
       number=12, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='refereed_citations', full_name='adsmsg.MetricsRecord.refereed_citations', index=12,
-      number=13, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='author_num', full_name='adsmsg.MetricsRecord.author_num', index=13,
-      number=14, type=5, cpp_type=1, label=1,
+      name='reference_num', full_name='adsmsg.MetricsRecord.reference_num', index=12,
+      number=13, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='an_refereed_citations', full_name='adsmsg.MetricsRecord.an_refereed_citations', index=14,
-      number=15, type=2, cpp_type=6, label=1,
+      name='rn_citations', full_name='adsmsg.MetricsRecord.rn_citations', index=13,
+      number=14, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='modtime', full_name='adsmsg.MetricsRecord.modtime', index=15,
-      number=16, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='rn_citation_data', full_name='adsmsg.MetricsRecord.rn_citation_data', index=14,
+      number=15, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='rn_citations_hist', full_name='adsmsg.MetricsRecord.rn_citations_hist', index=15,
+      number=16, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_METRICSRECORD_RNCITATIONSHISTENTRY, ],
   enum_types=[
   ],
   options=None,
@@ -156,8 +254,8 @@ _METRICSRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26,
-  serialized_end=383,
+  serialized_start=166,
+  serialized_end=691,
 )
 
 
@@ -187,21 +285,41 @@ _METRICSRECORDLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=385,
-  serialized_end=452,
+  serialized_start=693,
+  serialized_end=760,
 )
 
+_METRICSRECORD_RNCITATIONSHISTENTRY.containing_type = _METRICSRECORD
+_METRICSRECORD.fields_by_name['modtime'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_METRICSRECORD.fields_by_name['rn_citation_data'].message_type = _CITATION_RECORD
+_METRICSRECORD.fields_by_name['rn_citations_hist'].message_type = _METRICSRECORD_RNCITATIONSHISTENTRY
 _METRICSRECORDLIST.fields_by_name['metrics_records'].message_type = _METRICSRECORD
+DESCRIPTOR.message_types_by_name['citation_record'] = _CITATION_RECORD
 DESCRIPTOR.message_types_by_name['MetricsRecord'] = _METRICSRECORD
 DESCRIPTOR.message_types_by_name['MetricsRecordList'] = _METRICSRECORDLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
+citation_record = _reflection.GeneratedProtocolMessageType('citation_record', (_message.Message,), dict(
+  DESCRIPTOR = _CITATION_RECORD,
+  __module__ = 'metrics_pb2'
+  # @@protoc_insertion_point(class_scope:adsmsg.citation_record)
+  ))
+_sym_db.RegisterMessage(citation_record)
+
 MetricsRecord = _reflection.GeneratedProtocolMessageType('MetricsRecord', (_message.Message,), dict(
+
+  RnCitationsHistEntry = _reflection.GeneratedProtocolMessageType('RnCitationsHistEntry', (_message.Message,), dict(
+    DESCRIPTOR = _METRICSRECORD_RNCITATIONSHISTENTRY,
+    __module__ = 'metrics_pb2'
+    # @@protoc_insertion_point(class_scope:adsmsg.MetricsRecord.RnCitationsHistEntry)
+    ))
+  ,
   DESCRIPTOR = _METRICSRECORD,
   __module__ = 'metrics_pb2'
   # @@protoc_insertion_point(class_scope:adsmsg.MetricsRecord)
   ))
 _sym_db.RegisterMessage(MetricsRecord)
+_sym_db.RegisterMessage(MetricsRecord.RnCitationsHistEntry)
 
 MetricsRecordList = _reflection.GeneratedProtocolMessageType('MetricsRecordList', (_message.Message,), dict(
   DESCRIPTOR = _METRICSRECORDLIST,
@@ -211,4 +329,6 @@ MetricsRecordList = _reflection.GeneratedProtocolMessageType('MetricsRecordList'
 _sym_db.RegisterMessage(MetricsRecordList)
 
 
+_METRICSRECORD_RNCITATIONSHISTENTRY.has_options = True
+_METRICSRECORD_RNCITATIONSHISTENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 # @@protoc_insertion_point(module_scope)
