@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package adsmsg;
+
+message FulltextRequests {
+    repeated FulltextRequest requests = 1;
+}
+
+message FulltextRequest {
+    string bibcode = 1;
+    string provider = 2;
+    string ft_source = 3;
+}
