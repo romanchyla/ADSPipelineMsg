@@ -24,6 +24,7 @@ class Msg(object):
 
     def __str__(self):
         return str(self._data)
+    
 
     def __getattr__(self, key):
         if key == '_data':
@@ -81,9 +82,12 @@ class Msg(object):
         return self._data
 
 
-    def toJSON(self):
-        return json_format.MessageToJson(self.__dict__['_data'])
-    
+    def toJSON(self, return_string=False):
+        if return_string:
+            return json_format.MessageToJson(self.__dict__['_data'])
+        return json_format.MessageToDict(self.__dict__['_data'])
+
+
     def __json__(self):
         """Serializer used by the Kombu/Celery."""
         cls, data = self.dump()
