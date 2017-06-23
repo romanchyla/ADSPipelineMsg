@@ -63,6 +63,13 @@ class TestMsg(unittest.TestCase):
         b2 = Msg.loads(cls, data2)
         self.assertEqual(b1.bibcode, u'\u01b5')
         self.assertEqual(b2.bibcode, u'\u01b5')
+        
+    
+    def test_toJSON(self):
+        b = BibRecord(bibcode=u'\u01b5')
+        self.assertEqual(b.toJSON(), {'bibcode': u'\u01b5'})
+        self.assertTrue(isinstance(b.toJSON(), dict))
+        self.assertEqual('{\n  "bibcode": "\\u01b5"\n}', b.toJSON(return_string=True))
 
 
     def test_toJSON(self):
