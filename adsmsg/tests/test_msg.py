@@ -22,20 +22,20 @@ class TestMsg(unittest.TestCase):
         b = BibRecord(bibcode='bibcode')
         self.assertEqual(b.bibcode, 'bibcode')
         self.assertEqual(b.data.bibcode, 'bibcode')
-        
+
         # acces/set attributes directly
         b.bibcode = 'foobar'
         self.assertEqual(b.bibcode, 'foobar')
         self.assertEqual(b.data.bibcode, 'foobar')
-        
-    
+
+
     def test_serializer(self):
         b = BibRecord(bibcode='bibcode')
         cls, data = b.dump()
-        
+
         self.assertEqual('adsmsg.bibrecord.BibRecord', cls)
         self.assertEqual('\n\x07bibcode', data)
-        
+
         b2 = Msg.loads(cls, data)
         self.assertEqual(b2.bibcode, b.bibcode)
 
@@ -43,14 +43,14 @@ class TestMsg(unittest.TestCase):
     def test_higher_char(self):
         b = BibRecord(bibcode=u'\u01b5')
         cls, data = b.dump()
-        
+
         self.assertEqual('adsmsg.bibrecord.BibRecord', cls)
         self.assertEqual('\n\x02\xc6\xb5', data)
-        
+
         b2 = Msg.loads(cls, data)
         self.assertEqual(b2.bibcode, b.bibcode)
-        
-    
+
+
     def test_json(self):
         b = BibRecord(bibcode=u'\u01b5')
         cls, data = b.dump()
@@ -58,13 +58,20 @@ class TestMsg(unittest.TestCase):
         z = json.loads(x)
         data2 = base64.b64decode(z['__adsmsg__'][1])
         self.assertEqual(repr(data), repr(data2))
-        
+
         b1 = Msg.loads(cls, data)
         b2 = Msg.loads(cls, data2)
         self.assertEqual(b1.bibcode, u'\u01b5')
         self.assertEqual(b2.bibcode, u'\u01b5')
         
     
+    def test_toJSON(self):
+        b = BibRecord(bibcode=u'\u01b5')
+        self.assertEqual(b.toJSON(), {'bibcode': u'\u01b5'})
+        self.assertTrue(isinstance(b.toJSON(), dict))
+        self.assertEqual('{\n  "bibcode": "\\u01b5"\n}', b.toJSON(return_string=True))
+
+
     def test_toJSON(self):
         b = BibRecord(bibcode=u'\u01b5')
         self.assertEqual(b.toJSON(), {'bibcode': u'\u01b5'})

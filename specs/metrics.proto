@@ -1,26 +1,43 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
+
 package adsmsg;
 
+
+// [{"ref_norm": 0.2, "pubyear": 1954, "auth_norm": 0.25, "bibcode": "1954PhRv...93..257G", "cityear": 1954}, ...
+// holds an element from rn_citation_data list 
+message citation_record {
+    string bibcode = 1;
+    float auth_norm = 2;
+    int32 cityear = 3;
+    int32 pubyear = 4;
+    float ref_norm = 5;
+}
+
+
+// contains data from a metrics postgres record, no including primary key id field
+// these field names match the Postgres column names
 message MetricsRecord {
-	string bibcode = 1;
-	int32 id = 2;
-	bool refereed = 3;
-	float rn_citations = 4;
-	string rn_citation_data = 5; // actually json
-	repeated int32 downloads = 6;
-	repeated int32 reads = 7;
-	float an_citations = 8;
-	int32 refereed_citation_num = 9;
-	int32 citation_num = 10;
-	int32 reference_num = 11;
-	repeated string citations = 12;
-	repeated string refereed_citations = 13;
-	int32 author_num = 14;
-	float an_refereed_citations = 15;
-	string modtime = 16;
+    string bibcode = 1;
+    float an_citations = 2;
+    float an_refereed_citations = 3;
+    int32 author_num = 4;
+    int32 citation_num = 5;
+    repeated string citations = 6;
+    repeated int32 downloads = 7;
+    google.protobuf.Timestamp modtime = 8;
+    repeated int32 reads = 9;
+    bool refereed = 10;
+    int32 refereed_citation_num = 11;
+    repeated string refereed_citations = 12;
+    int32 reference_num = 13;
+    float rn_citations = 14;
+    repeated citation_record rn_citation_data = 15;
+    // {"1992": 0.6800104945559491, ...}
+    map<string, float> rn_citations_hist = 16; 
 }
 
 message MetricsRecordList {
-	repeated MetricsRecord metrics_records = 1;
+    repeated MetricsRecord metrics_records = 1;
 }

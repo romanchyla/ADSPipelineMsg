@@ -12,7 +12,7 @@ class TestMsg(unittest.TestCase):
 
 
     def test(self):
-        nonbib_data = {'bibcode': '2003ASPC..295..361M', 'refereed': False, 
+        nonbib_data = {'bibcode': '2003ASPC..295..361M', 'refereed': False,
                        'downloads': [0,0], 'boost': 3.1,
                        'reads': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]}
         m = NonBibRecord(**nonbib_data)
@@ -20,7 +20,7 @@ class TestMsg(unittest.TestCase):
         self.assertEqual(m.refereed, nonbib_data['refereed'])
         self.assertEqual(m.downloads, nonbib_data['downloads'])
         self.assertEqual(m.reads, nonbib_data['reads'])
-        self.assertEqual(m.boost, nonbib_data['boost'])
+        self.assertAlmostEqual(m.boost, nonbib_data['boost'], places=5)
 
 
 if __name__ == '__main__':
