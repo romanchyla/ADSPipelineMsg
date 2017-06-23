@@ -1,6 +1,8 @@
 from .msg import Msg
 from .protobuf import metrics_pb2
 
+# wrapper classes for metrics protobufs
+
 class MetricsRecord(Msg):
 
     def __init__(self, *args, **kwargs):
@@ -25,5 +27,11 @@ class MetricsRecord(Msg):
 
 class MetricsRecordList(Msg):
     
-    def __init__(self, *args, **kwargs):        
+    def __init__(self, *args, **kwargs):
+        """converts list of dicts to list of protobuf (not wrapper!) instances""" 
+        if 'metrics_records' in kwargs:
+            tmp = [MetricsRecord(**x)._data for x in kwargs['metrics_records']]
+            kwargs['metrics_records'] = tmp
         super(MetricsRecordList, self).__init__(metrics_pb2.MetricsRecordList(), args, kwargs)
+    
+           
