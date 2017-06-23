@@ -1,4 +1,4 @@
 from .bibrecord import BibRecord
-from .denormalized_record import DenormalizedRecord
+from .normalized_bibrecord import NormalizedBibRecord
 from .orcid_claims import OrcidClaims
 from .fulltext_requests import FulltextRequests

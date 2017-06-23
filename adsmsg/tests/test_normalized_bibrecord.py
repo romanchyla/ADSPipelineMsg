@@ -2,8 +2,8 @@ import sys
 import os
 
 import unittest
-from adsmsg import DenormalizedRecord
-
+from adsmsg import NormalizedBibRecord
+from adsmsg.tests import stubdata
 
 class TestDenormalizedRecord(unittest.TestCase):
 
@@ -17,7 +17,7 @@ class TestDenormalizedRecord(unittest.TestCase):
 
 
     def test_is_valid(self):
-        denormalized_record = DenormalizedRecord()
+        denormalized_record = NormalizedBibRecord()
         self.assertTrue(denormalized_record.is_valid())
 
     def test_serialization(self):
@@ -25,7 +25,7 @@ class TestDenormalizedRecord(unittest.TestCase):
         author = "Foe, J."
         author_count = 1
 
-        denormalized_record = DenormalizedRecord()
+        denormalized_record = NormalizedBibRecord()
         denormalized_record.data.abstract = abstract
         denormalized_record.data.author.append(author)
         denormalized_record.data.author_count = author_count
@@ -35,11 +35,16 @@ class TestDenormalizedRecord(unittest.TestCase):
         self.assertEqual(data_str, 'abstract: "{0}"\nauthor: "{1}"\nauthor_count: {2}\n'.format(abstract, author, author_count))
         self.assertNotEqual(data, data_str)
 
-        recovered_bibrecord = DenormalizedRecord.deserializer(data)
+        recovered_bibrecord = NormalizedBibRecord.deserializer(data)
         self.assertTrue(recovered_bibrecord.is_valid())
         self.assertEqual(denormalized_record.data.abstract, abstract)
         self.assertEqual(denormalized_record.data.author[0], author)
         self.assertEqual(denormalized_record.data.author_count, author_count)
+        
+        
+    def test_full_record(self):
+        r = NormalizedBibRecord(**stubdata.solr_record)
+        print r
 
 if __name__ == '__main__':
     unittest.main()

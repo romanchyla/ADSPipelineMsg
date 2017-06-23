@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package adsmsg;
 
-message DenormalizedRecord {
+message NormalizedBibRecord {
     string abstract = 1;
     string ack = 2;
     repeated string aff = 3;
