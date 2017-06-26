@@ -72,12 +72,6 @@ class TestMsg(unittest.TestCase):
         self.assertEqual('{\n  "bibcode": "\\u01b5"\n}', b.toJSON(return_string=True))
 
 
-    def test_toJSON(self):
-        b = BibRecord(bibcode=u'\u01b5')
-        self.assertEqual(b.toJSON(), {'bibcode': u'\u01b5'})
-        self.assertTrue(isinstance(b.toJSON(), dict))
-        self.assertEqual('{\n  "bibcode": "\\u01b5"\n}', b.toJSON(return_string=True))
-
 
 if __name__ == '__main__':
     unittest.main()

@@ -85,7 +85,8 @@ class Msg(object):
     def toJSON(self, return_string=False):
         if return_string:
             return json_format.MessageToJson(self.__dict__['_data'])
-        return json_format.MessageToDict(self.__dict__['_data'])
+        return json_format.MessageToDict(self.__dict__['_data'],
+                    preserving_proto_field_name=True)
 
 
     def __json__(self):
