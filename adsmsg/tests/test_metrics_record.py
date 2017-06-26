@@ -3,6 +3,7 @@ import unittest
 from adsmsg.metrics_record import MetricsRecord, MetricsRecordList
 from datetime import datetime
 import time
+from json import dumps, loads
 from __builtin__ import float
 
 class TestMsg(unittest.TestCase):
@@ -40,7 +41,12 @@ class TestMsg(unittest.TestCase):
                 self.assertAlmostEqual(getattr(m, key), metrics_data[key], 6)
             else:
                 self.assertEqual(getattr(m, key), metrics_data[key])
-
+        self.verify_json(m, 'simple test')
+    
+    def verify_json(self, metrics_record, message):
+        j = metrics_record.toJSON()
+        test = loads(dumps(j))
+        self.assertEqual(j, test, message)
             
     def test_time(self):
         """protobuf time field requires conversion back to python datetime"""
@@ -52,15 +58,7 @@ class TestMsg(unittest.TestCase):
         m_iso = m.modtime.ToJsonString()
         m_datetime = datetime.strptime(m_iso, "%Y-%m-%dT%H:%M:%S.%fZ")
         self.assertEqual(test_datetime, m_datetime)
-
-
-    def test_id(self):
-        """id field is not serialized, when present it should not raise exception"""
-        metrics_data = {'bibcode': '1954PhRv...93..256R',
-                        'id': 1}
-        m = MetricsRecord(**metrics_data)
-        m_id = getattr(m, 'id', None)
-        self.assertEqual(None, m_id)
+        self.verify_json(m, 'time test')
 
 
     def test_rn_dict_data(self):
@@ -95,13 +93,16 @@ class TestMsg(unittest.TestCase):
         self.assertEqual(len(t), len(p))
         for key in t:
             self.assertAlmostEqual(t[key], p[key], 6, msg='rn_citations_hist field {}'.format(key))
+        
+        self.verify_json(m, 'dict test')
+
 
 
     def test_record_list(self):
         """simple test for test MetricsRecordList"""
-        metrics_data1 = metrics_data = {'bibcode': '1954PhRv...93..256R', 'id': 1, 'refereed': True}
-        metrics_data2 = metrics_data = {'bibcode': '1954PhRv...93..256M', 'id': 2, 'refereed': False}
-        metrics_data3 = metrics_data = {'bibcode': '1954PhRv...93..256S', 'id': 2, 'refereed': False}
+        metrics_data1 = metrics_data = {'bibcode': '1954PhRv...93..256R', 'refereed': True}
+        metrics_data2 = metrics_data = {'bibcode': '1954PhRv...93..256M', 'refereed': False}
+        metrics_data3 = metrics_data = {'bibcode': '1954PhRv...93..256S', 'refereed': False}
         metrics_list = [metrics_data1, metrics_data2, metrics_data3]
         m = MetricsRecordList(metrics_records=metrics_list)
         self.assertEqual(len(metrics_list), len(m.metrics_records))

@@ -14,7 +14,6 @@ class MetricsRecord(Msg):
         the citation_records message defines the contents of the json object 
         """
         instance = metrics_pb2.MetricsRecord()
-        kwargs.pop('id', None)  # local database key field is not serialized
         rn_citation_data = kwargs.pop('rn_citation_data', None)
         super(MetricsRecord, self).__init__(instance, args, kwargs)
         if rn_citation_data:
