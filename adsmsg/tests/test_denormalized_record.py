@@ -4,7 +4,6 @@ import os
 import unittest
 from adsmsg import DenormalizedRecord
 
-
 class TestDenormalizedRecord(unittest.TestCase):
 
     def setUp(self):
@@ -40,6 +39,76 @@ class TestDenormalizedRecord(unittest.TestCase):
         self.assertEqual(denormalized_record.data.abstract, abstract)
         self.assertEqual(denormalized_record.data.author[0], author)
         self.assertEqual(denormalized_record.data.author_count, author_count)
+        
+    
+    def test_full_record(self):
+        """This is here also as a documentation."""
+        solr_record = {
+             'abstract': u'abstract abstract',
+             'ack': u'J.H.S. is grateful to Yujin Yang',
+             'aff': [u'aff1', u'aff2'],
+             'alternate_bibcode': [u'2015arXiv151103789S'],
+             'arxiv_class': [u'Astrophysics - Astrophysics of Galaxies'],
+             'author': [u'Shinn, Jong-Ho', u'Seon, Kwang-Il'],
+             'author_count': 2,
+             'author_facet': [u'Shinn, J', u'Seon, K'],
+             'author_facet_hier': [u'0/Shinn, J',
+                  u'1/Shinn, J/Shinn, Jong-Ho',
+                  u'0/Seon, K',
+                  u'1/Seon, K/Seon, Kwang-Il'],
+             'author_norm': [u'Shinn, J', u'Seon, K'],
+             'bibcode': u'2015ApJ...815..133S',
+             'bibstem': [u'ApJ', u'ApJ...815'],
+             'bibstem_facet': u'ApJ',
+             'body': u"body body",
+             'citation_count': 0,
+             'data': [u'CDS', u'NED'],
+             'data_facet': [u'CDS', u'NED'],
+             'database': [u'astronomy'],
+             'date': u'2015-12-01T00:00:00.000000Z',
+             'doctype': u'article',
+             'doctype_facet_hier': [u'0/Article', u'1/Article/Journal Article'],
+             'doi': [u'10.1088/0004-637X/815/2/133'],
+             'eid': u'133',
+             'email': [u'jhshinn@kasi.re.kr', u'-'],
+             'first_author': u'Shinn, Jong-Ho',
+             'first_author_facet_hier': [u'0/Shinn, J', u'1/Shinn, J/Shinn, Jong-Ho'],
+             'first_author_norm': u'Shinn, J',
+             'identifier': [u'1511.03789',
+              u'10.1088/0004-637X/815/2/133',
+              u'2015arXiv151103789S'],
+             'issue': u'2',
+             'keyword': [u'dust',
+              u'extinction',
+              u'galaxies: halos'],
+             'keyword_facet': [u'dust',
+              u'ism dust extinction'],
+             'keyword_norm': [u'dust',
+              u'-'],
+             'keyword_schema': [u'Astronomy',
+              u'Astronomy'],
+             'links_data': [u'{"access": "", "instances": "7", "title": "", "type": "simbad", "url": "http://$SIMBAD$/simbo.pl?bibcode=2015ApJ...815..133S"}',
+              u'{"access": "open", "instances": "", "title": "", "type": "pdf", "url": "http://stacks.iop.org/0004-637X/815/133/pdf"}'],
+             'page': [u'133'],
+             'property': [u'OPENACCESS', u'REFEREED'],
+             'pub': u'The Astrophysical Journal',
+             'pub_raw': u'The Astrophysical Journal, Volume 815, Issue 2, article id. 133, <NUMPAGES>14</NUMPAGES> pp. (2015).',
+             'pubdate': u'2015-12-00',
+             'pubnote': [u'33 pages, 7 figures, 5 tables, ApJ in press; doi:10.1088/0004-637X/815/2/133'],
+             'read_count': 10,
+             'reference': [u'1941ApJ....93...70H', u'1966ApJ...145..811P'],
+             'title': [u'Ultraviolet Radiative Transfer Modeling of Nearby Galaxies'],
+             'volume': u'815',
+             'year': u'2015'}
+
+        r = DenormalizedRecord(**solr_record)
+        
+        # protobuf actually removes zero values, which is imho cool....
+        expected = {}
+        expected.update(solr_record)
+        expected.pop('citation_count')
+        
+        self.assertEqual(expected, r.toJSON())
 
 if __name__ == '__main__':
     unittest.main()

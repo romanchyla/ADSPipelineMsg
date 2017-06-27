@@ -10,7 +10,7 @@ message DenormalizedRecord {
     repeated string alternate_title = 5;
     repeated string arxiv_class = 6;
     repeated string author = 7;
-    uint64 author_count = 8;
+    int32 author_count = 8;
     repeated string author_facet = 9;
     //repeated string author_native = 10; // Waiting for montysolr
     repeated string author_facet_hier = 11;
@@ -63,7 +63,7 @@ message DenormalizedRecord {
     repeated string pubnote = 58;
     string pub_raw = 59;
     string pubdate = 60;
-    uint64 read_count = 61;
+    int32 read_count = 61;
     repeated string reader = 62;
     uint64 recid = 63;
     repeated string reference = 64;
