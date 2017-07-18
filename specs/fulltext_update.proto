@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package adsmsg;
+
+message FulltextUpdate {
+    string bibcode = 1;
+    string body = 2;
+}
+
