@@ -14,10 +14,12 @@ message NonBibRecord {
     int32 citation_count = 9;
     int32 read_count = 10;
     int32 norm_cites = 11;
-    repeated int32 readers = 12;
+    repeated string readers = 12;
     repeated int32 downloads = 13;
     repeated int32 reads = 14;
-    repeated string refernce = 15;
+    repeated string reference = 15;
+    repeated string ned_objects = 16;
+
 }    
 
 message NonBibRecordList {
