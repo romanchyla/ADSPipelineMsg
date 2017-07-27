@@ -5,3 +5,4 @@ from .fulltext_update import FulltextUpdate
 from .metrics_record import MetricsRecord
 from .nonbibrecord import NonBibRecord
 from .orcid_claims import OrcidClaims
+from .status import Status

@@ -1,5 +1,5 @@
 syntax = "proto3";
-
+import "status.proto";
 package adsmsg;
 
 message BibRecord {
@@ -7,6 +7,7 @@ message BibRecord {
     string JSON_fingerprint = 2;
     Metadata metadata = 3;
     Text text = 4;
+    Status status = 5;
 
     message Metadata {
         General general = 1;

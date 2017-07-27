@@ -1,5 +1,5 @@
 syntax = "proto3";
-
+import "status.proto";
 package adsmsg;
 
 message FulltextRequests {
@@ -10,4 +10,5 @@ message FulltextRequest {
     string bibcode = 1;
     string provider = 2;
     string ft_source = 3;
+    Status status = 4;
 }

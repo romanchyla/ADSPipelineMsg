@@ -1,5 +1,5 @@
 syntax = "proto3";
-
+import "status.proto";
 package adsmsg;
 
 message DenormalizedRecord {
@@ -76,4 +76,5 @@ message DenormalizedRecord {
     repeated string vizier_facet = 71;
     string volume = 72;
     string year = 73;
+    Status status = 74;
 }

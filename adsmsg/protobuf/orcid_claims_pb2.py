@@ -13,14 +13,16 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
+import status_pb2 as status__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='orcid_claims.proto',
   package='adsmsg',
   syntax='proto3',
-  serialized_pb=_b('\n\x12orcid_claims.proto\x12\x06\x61\x64smsg\"U\n\x0bOrcidClaims\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x0f\n\x07\x61uthors\x18\x02 \x03(\t\x12\x10\n\x08verified\x18\x03 \x03(\t\x12\x12\n\nunverified\x18\x04 \x03(\tb\x06proto3')
-)
+  serialized_pb=_b('\n\x12orcid_claims.proto\x12\x06\x61\x64smsg\x1a\x0cstatus.proto\"u\n\x0bOrcidClaims\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x0f\n\x07\x61uthors\x18\x02 \x03(\t\x12\x10\n\x08verified\x18\x03 \x03(\t\x12\x12\n\nunverified\x18\x04 \x03(\t\x12\x1e\n\x06status\x18\x05 \x01(\x0e\x32\x0e.adsmsg.Statusb\x06proto3')
+  ,
+  dependencies=[status__pb2.DESCRIPTOR,])
 
 
 
@@ -60,6 +62,13 @@ _ORCIDCLAIMS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='adsmsg.OrcidClaims.status', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -72,10 +81,11 @@ _ORCIDCLAIMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30,
-  serialized_end=115,
+  serialized_start=44,
+  serialized_end=161,
 )
 
+_ORCIDCLAIMS.fields_by_name['status'].enum_type = status__pb2._STATUS
 DESCRIPTOR.message_types_by_name['OrcidClaims'] = _ORCIDCLAIMS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

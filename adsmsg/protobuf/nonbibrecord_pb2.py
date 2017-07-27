@@ -13,14 +13,16 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
+import status_pb2 as status__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='nonbibrecord.proto',
   package='adsmsg',
   syntax='proto3',
-  serialized_pb=_b('\n\x12nonbibrecord.proto\x12\x06\x61\x64smsg\"\xb3\x02\n\x0cNonBibRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x0f\n\x07\x61uthors\x18\x03 \x03(\t\x12\x10\n\x08refereed\x18\x04 \x01(\x08\x12\x16\n\x0esimbad_objects\x18\x05 \x03(\t\x12\x0e\n\x06grants\x18\x06 \x03(\t\x12\x11\n\tcitations\x18\x07 \x03(\t\x12\r\n\x05\x62oost\x18\x08 \x01(\x02\x12\x16\n\x0e\x63itation_count\x18\t \x01(\x05\x12\x12\n\nread_count\x18\n \x01(\x05\x12\x12\n\nnorm_cites\x18\x0b \x01(\x05\x12\x0f\n\x07readers\x18\x0c \x03(\t\x12\x11\n\tdownloads\x18\r \x03(\x05\x12\r\n\x05reads\x18\x0e \x03(\x05\x12\x11\n\treference\x18\x0f \x03(\t\x12\x13\n\x0bned_objects\x18\x10 \x03(\t\"@\n\x10NonBibRecordList\x12,\n\x0enonbib_records\x18\x01 \x03(\x0b\x32\x14.adsmsg.NonBibRecordb\x06proto3')
-)
+  serialized_pb=_b('\n\x12nonbibrecord.proto\x12\x06\x61\x64smsg\x1a\x0cstatus.proto\"\xd3\x02\n\x0cNonBibRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x0f\n\x07\x61uthors\x18\x03 \x03(\t\x12\x10\n\x08refereed\x18\x04 \x01(\x08\x12\x16\n\x0esimbad_objects\x18\x05 \x03(\t\x12\x0e\n\x06grants\x18\x06 \x03(\t\x12\x11\n\tcitations\x18\x07 \x03(\t\x12\r\n\x05\x62oost\x18\x08 \x01(\x02\x12\x16\n\x0e\x63itation_count\x18\t \x01(\x05\x12\x12\n\nread_count\x18\n \x01(\x05\x12\x12\n\nnorm_cites\x18\x0b \x01(\x05\x12\x0f\n\x07readers\x18\x0c \x03(\t\x12\x11\n\tdownloads\x18\r \x03(\x05\x12\r\n\x05reads\x18\x0e \x03(\x05\x12\x11\n\treference\x18\x0f \x03(\t\x12\x13\n\x0bned_objects\x18\x10 \x03(\t\x12\x1e\n\x06status\x18\x11 \x01(\x0e\x32\x0e.adsmsg.Status\"@\n\x10NonBibRecordList\x12,\n\x0enonbib_records\x18\x01 \x03(\x0b\x32\x14.adsmsg.NonBibRecordb\x06proto3')
+  ,
+  dependencies=[status__pb2.DESCRIPTOR,])
 
 
 
@@ -144,6 +146,13 @@ _NONBIBRECORD = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='adsmsg.NonBibRecord.status', index=16,
+      number=17, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -156,8 +165,8 @@ _NONBIBRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31,
-  serialized_end=338,
+  serialized_start=45,
+  serialized_end=384,
 )
 
 
@@ -187,10 +196,11 @@ _NONBIBRECORDLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=340,
-  serialized_end=404,
+  serialized_start=386,
+  serialized_end=450,
 )
 
+_NONBIBRECORD.fields_by_name['status'].enum_type = status__pb2._STATUS
 _NONBIBRECORDLIST.fields_by_name['nonbib_records'].message_type = _NONBIBRECORD
 DESCRIPTOR.message_types_by_name['NonBibRecord'] = _NONBIBRECORD
 DESCRIPTOR.message_types_by_name['NonBibRecordList'] = _NONBIBRECORDLIST

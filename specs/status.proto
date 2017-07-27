@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package adsmsg;
+
+enum Status {
+  created = 0;
+  updated = 1;
+  deleted = 2;
+}

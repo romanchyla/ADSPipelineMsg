@@ -13,14 +13,16 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
+import status_pb2 as status__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='fulltext_update.proto',
   package='adsmsg',
   syntax='proto3',
-  serialized_pb=_b('\n\x15\x66ulltext_update.proto\x12\x06\x61\x64smsg\"/\n\x0e\x46ulltextUpdate\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\tb\x06proto3')
-)
+  serialized_pb=_b('\n\x15\x66ulltext_update.proto\x12\x06\x61\x64smsg\x1a\x0cstatus.proto\"O\n\x0e\x46ulltextUpdate\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x1e\n\x06status\x18\x03 \x01(\x0e\x32\x0e.adsmsg.Statusb\x06proto3')
+  ,
+  dependencies=[status__pb2.DESCRIPTOR,])
 
 
 
@@ -46,6 +48,13 @@ _FULLTEXTUPDATE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='adsmsg.FulltextUpdate.status', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -58,10 +67,11 @@ _FULLTEXTUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=33,
-  serialized_end=80,
+  serialized_start=47,
+  serialized_end=126,
 )
 
+_FULLTEXTUPDATE.fields_by_name['status'].enum_type = status__pb2._STATUS
 DESCRIPTOR.message_types_by_name['FulltextUpdate'] = _FULLTEXTUPDATE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

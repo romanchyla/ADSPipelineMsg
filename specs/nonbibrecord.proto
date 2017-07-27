@@ -1,5 +1,5 @@
 syntax = "proto3";
-
+import "status.proto";
 package adsmsg;
 
 message NonBibRecord {
@@ -19,7 +19,7 @@ message NonBibRecord {
     repeated int32 reads = 14;
     repeated string reference = 15;
     repeated string ned_objects = 16;
-
+    Status status = 17;
 }    
 
 message NonBibRecordList {

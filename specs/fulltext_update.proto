@@ -1,9 +1,10 @@
 syntax = "proto3";
-
+import "status.proto";
 package adsmsg;
 
 message FulltextUpdate {
     string bibcode = 1;
     string body = 2;
+    Status status = 3;
 }
 
