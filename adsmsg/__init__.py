@@ -7,3 +7,4 @@ from .metrics_record import MetricsRecordList
 from .nonbibrecord import NonBibRecord
 from .nonbibrecord import NonBibRecordList
 from .orcid_claims import OrcidClaims
+from .status import Status

@@ -13,14 +13,16 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
+import status_pb2 as status__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='fulltext_requests.proto',
   package='adsmsg',
   syntax='proto3',
-  serialized_pb=_b('\n\x17\x66ulltext_requests.proto\x12\x06\x61\x64smsg\"=\n\x10\x46ulltextRequests\x12)\n\x08requests\x18\x01 \x03(\x0b\x32\x17.adsmsg.FulltextRequest\"G\n\x0f\x46ulltextRequest\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12\x11\n\tft_source\x18\x03 \x01(\tb\x06proto3')
-)
+  serialized_pb=_b('\n\x17\x66ulltext_requests.proto\x12\x06\x61\x64smsg\x1a\x0cstatus.proto\"=\n\x10\x46ulltextRequests\x12)\n\x08requests\x18\x01 \x03(\x0b\x32\x17.adsmsg.FulltextRequest\"g\n\x0f\x46ulltextRequest\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12\x11\n\tft_source\x18\x03 \x01(\t\x12\x1e\n\x06status\x18\x04 \x01(\x0e\x32\x0e.adsmsg.Statusb\x06proto3')
+  ,
+  dependencies=[status__pb2.DESCRIPTOR,])
 
 
 
@@ -51,8 +53,8 @@ _FULLTEXTREQUESTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=35,
-  serialized_end=96,
+  serialized_start=49,
+  serialized_end=110,
 )
 
 
@@ -84,6 +86,13 @@ _FULLTEXTREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='adsmsg.FulltextRequest.status', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -96,11 +105,12 @@ _FULLTEXTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=98,
-  serialized_end=169,
+  serialized_start=112,
+  serialized_end=215,
 )
 
 _FULLTEXTREQUESTS.fields_by_name['requests'].message_type = _FULLTEXTREQUEST
+_FULLTEXTREQUEST.fields_by_name['status'].enum_type = status__pb2._STATUS
 DESCRIPTOR.message_types_by_name['FulltextRequests'] = _FULLTEXTREQUESTS
 DESCRIPTOR.message_types_by_name['FulltextRequest'] = _FULLTEXTREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)

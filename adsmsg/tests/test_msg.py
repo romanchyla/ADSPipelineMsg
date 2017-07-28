@@ -3,7 +3,7 @@ import os
 
 import unittest
 import adsmsg
-from adsmsg import BibRecord
+from adsmsg import BibRecord, Status
 from adsmsg.msg import Msg
 import json
 import base64
@@ -71,7 +71,13 @@ class TestMsg(unittest.TestCase):
         self.assertTrue(isinstance(b.toJSON(), dict))
         self.assertEqual('{\n  "bibcode": "\\u01b5"\n}', b.toJSON(return_string=True))
 
+    
+    def test_status(self):
+        b = BibRecord(bibcode='bibcode', status=Status.active)
+        self.assertEqual(b.status, 0)
 
-
+        b = BibRecord(bibcode='bibcode', status='active')
+        self.assertEqual(b.status, 0)
+        
 if __name__ == '__main__':
     unittest.main()

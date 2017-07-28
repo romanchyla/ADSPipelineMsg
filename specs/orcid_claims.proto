@@ -1,5 +1,5 @@
 syntax = "proto3";
-
+import "status.proto";
 package adsmsg;
 
 message OrcidClaims {
@@ -13,4 +13,5 @@ message OrcidClaims {
     //  - unverified:  the rest
     repeated string verified = 3;
     repeated string unverified = 4;
+    Status status = 5;
 }

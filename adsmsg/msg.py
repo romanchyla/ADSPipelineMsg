@@ -1,6 +1,7 @@
 from datetime import datetime
 from google.protobuf import json_format
 from google.protobuf import timestamp_pb2
+from .protobuf import status_pb2 as Status
 import json
 import base64
 
@@ -9,6 +10,13 @@ class Msg(object):
     def __init__(self, instance, args, kwargs):
         self.__dict__['_data'] = instance
         if kwargs:
+            
+            # every ADS msg object can have status; here we simply allow to specify status as a
+            # string that correspons to the key from Status Enum type
+            if 'status' in kwargs:
+                if isinstance(kwargs['status'], basestring) and hasattr(Status, kwargs['status']):
+                    kwargs['status'] = getattr(Status, kwargs['status'])
+            
             for k, v in kwargs.items():
                 if isinstance(v, list) or isinstance(v, tuple):
                     getattr(instance, k).extend(v) #TODO(rca): use some smarter reflection
