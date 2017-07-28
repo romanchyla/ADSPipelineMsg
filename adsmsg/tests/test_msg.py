@@ -73,10 +73,10 @@ class TestMsg(unittest.TestCase):
 
     
     def test_status(self):
-        b = BibRecord(bibcode='bibcode', status=Status.created)
+        b = BibRecord(bibcode='bibcode', status=Status.active)
         self.assertEqual(b.status, 0)
 
-        b = BibRecord(bibcode='bibcode', status='created')
+        b = BibRecord(bibcode='bibcode', status='active')
         self.assertEqual(b.status, 0)
         
 if __name__ == '__main__':
