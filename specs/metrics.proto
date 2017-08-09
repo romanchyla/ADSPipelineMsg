@@ -41,4 +41,5 @@ message MetricsRecord {
 
 message MetricsRecordList {
     repeated MetricsRecord metrics_records = 1;
+    Status status = 2;
 }

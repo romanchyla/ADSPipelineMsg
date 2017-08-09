@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='metrics.proto',
   package='adsmsg',
   syntax='proto3',
-  serialized_pb=_b('\n\rmetrics.proto\x12\x06\x61\x64smsg\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x0cstatus.proto\"i\n\x0f\x63itation_record\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x11\n\tauth_norm\x18\x02 \x01(\x02\x12\x0f\n\x07\x63ityear\x18\x03 \x01(\x05\x12\x0f\n\x07pubyear\x18\x04 \x01(\x05\x12\x10\n\x08ref_norm\x18\x05 \x01(\x02\"\xad\x04\n\rMetricsRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x14\n\x0c\x61n_citations\x18\x02 \x01(\x02\x12\x1d\n\x15\x61n_refereed_citations\x18\x03 \x01(\x02\x12\x12\n\nauthor_num\x18\x04 \x01(\x05\x12\x14\n\x0c\x63itation_num\x18\x05 \x01(\x05\x12\x11\n\tcitations\x18\x06 \x03(\t\x12\x11\n\tdownloads\x18\x07 \x03(\x05\x12+\n\x07modtime\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05reads\x18\t \x03(\x05\x12\x10\n\x08refereed\x18\n \x01(\x08\x12\x1d\n\x15refereed_citation_num\x18\x0b \x01(\x05\x12\x1a\n\x12refereed_citations\x18\x0c \x03(\t\x12\x15\n\rreference_num\x18\r \x01(\x05\x12\x14\n\x0crn_citations\x18\x0e \x01(\x02\x12\x31\n\x10rn_citation_data\x18\x0f \x03(\x0b\x32\x17.adsmsg.citation_record\x12\x45\n\x11rn_citations_hist\x18\x10 \x03(\x0b\x32*.adsmsg.MetricsRecord.RnCitationsHistEntry\x12\x1e\n\x06status\x18\x11 \x01(\x0e\x32\x0e.adsmsg.Status\x1a\x36\n\x14RnCitationsHistEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\"C\n\x11MetricsRecordList\x12.\n\x0fmetrics_records\x18\x01 \x03(\x0b\x32\x15.adsmsg.MetricsRecordb\x06proto3')
+  serialized_pb=_b('\n\rmetrics.proto\x12\x06\x61\x64smsg\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x0cstatus.proto\"i\n\x0f\x63itation_record\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x11\n\tauth_norm\x18\x02 \x01(\x02\x12\x0f\n\x07\x63ityear\x18\x03 \x01(\x05\x12\x0f\n\x07pubyear\x18\x04 \x01(\x05\x12\x10\n\x08ref_norm\x18\x05 \x01(\x02\"\xad\x04\n\rMetricsRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x14\n\x0c\x61n_citations\x18\x02 \x01(\x02\x12\x1d\n\x15\x61n_refereed_citations\x18\x03 \x01(\x02\x12\x12\n\nauthor_num\x18\x04 \x01(\x05\x12\x14\n\x0c\x63itation_num\x18\x05 \x01(\x05\x12\x11\n\tcitations\x18\x06 \x03(\t\x12\x11\n\tdownloads\x18\x07 \x03(\x05\x12+\n\x07modtime\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05reads\x18\t \x03(\x05\x12\x10\n\x08refereed\x18\n \x01(\x08\x12\x1d\n\x15refereed_citation_num\x18\x0b \x01(\x05\x12\x1a\n\x12refereed_citations\x18\x0c \x03(\t\x12\x15\n\rreference_num\x18\r \x01(\x05\x12\x14\n\x0crn_citations\x18\x0e \x01(\x02\x12\x31\n\x10rn_citation_data\x18\x0f \x03(\x0b\x32\x17.adsmsg.citation_record\x12\x45\n\x11rn_citations_hist\x18\x10 \x03(\x0b\x32*.adsmsg.MetricsRecord.RnCitationsHistEntry\x12\x1e\n\x06status\x18\x11 \x01(\x0e\x32\x0e.adsmsg.Status\x1a\x36\n\x14RnCitationsHistEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\"c\n\x11MetricsRecordList\x12.\n\x0fmetrics_records\x18\x01 \x03(\x0b\x32\x15.adsmsg.MetricsRecord\x12\x1e\n\x06status\x18\x02 \x01(\x0e\x32\x0e.adsmsg.Statusb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,status__pb2.DESCRIPTOR,])
 
@@ -281,6 +281,13 @@ _METRICSRECORDLIST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='adsmsg.MetricsRecordList.status', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -294,7 +301,7 @@ _METRICSRECORDLIST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=739,
-  serialized_end=806,
+  serialized_end=838,
 )
 
 _METRICSRECORD_RNCITATIONSHISTENTRY.containing_type = _METRICSRECORD
@@ -303,6 +310,7 @@ _METRICSRECORD.fields_by_name['rn_citation_data'].message_type = _CITATION_RECOR
 _METRICSRECORD.fields_by_name['rn_citations_hist'].message_type = _METRICSRECORD_RNCITATIONSHISTENTRY
 _METRICSRECORD.fields_by_name['status'].enum_type = status__pb2._STATUS
 _METRICSRECORDLIST.fields_by_name['metrics_records'].message_type = _METRICSRECORD
+_METRICSRECORDLIST.fields_by_name['status'].enum_type = status__pb2._STATUS
 DESCRIPTOR.message_types_by_name['citation_record'] = _CITATION_RECORD
 DESCRIPTOR.message_types_by_name['MetricsRecord'] = _METRICSRECORD
 DESCRIPTOR.message_types_by_name['MetricsRecordList'] = _METRICSRECORDLIST
