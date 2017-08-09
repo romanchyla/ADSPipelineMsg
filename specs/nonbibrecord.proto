@@ -24,4 +24,5 @@ message NonBibRecord {
 
 message NonBibRecordList {
 	repeated NonBibRecord nonbib_records = 1;
+	Status status = 2;
 }
