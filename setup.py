@@ -10,6 +10,6 @@ setup(name='adsmsg',
       packages=['adsmsg', 'adsmsg.protobuf', 'adsmsg.tests'],
       install_requires=[
           'protobuf==3.3.0',
-          'setuptools==36.2.5',
+          'setuptools>=36.2.5',
       ]
   )
