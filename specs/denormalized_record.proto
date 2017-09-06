@@ -77,4 +77,5 @@ message DenormalizedRecord {
     string volume = 72;
     string year = 73;
     Status status = 74;
+    int32 page_count = 75;
 }
