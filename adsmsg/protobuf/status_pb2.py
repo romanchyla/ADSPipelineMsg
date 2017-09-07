@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='status.proto',
   package='adsmsg',
   syntax='proto3',
-  serialized_pb=_b('\n\x0cstatus.proto\x12\x06\x61\x64smsg*!\n\x06Status\x12\n\n\x06\x61\x63tive\x10\x00\x12\x0b\n\x07\x64\x65leted\x10\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x0cstatus.proto\x12\x06\x61\x64smsg*7\n\x06Status\x12\n\n\x06\x61\x63tive\x10\x00\x12\x0b\n\x07\x64\x65leted\x10\x01\x12\x07\n\x03new\x10\x02\x12\x0b\n\x07updated\x10\x03\x62\x06proto3')
 )
 
 _STATUS = _descriptor.EnumDescriptor(
@@ -37,17 +37,27 @@ _STATUS = _descriptor.EnumDescriptor(
       name='deleted', index=1, number=1,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='new', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='updated', index=3, number=3,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
   serialized_start=24,
-  serialized_end=57,
+  serialized_end=79,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS)
 
 Status = enum_type_wrapper.EnumTypeWrapper(_STATUS)
 active = 0
 deleted = 1
+new = 2
+updated = 3
 
 
 DESCRIPTOR.enum_types_by_name['Status'] = _STATUS
