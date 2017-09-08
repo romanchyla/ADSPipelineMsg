@@ -8,3 +8,4 @@ from .nonbibrecord import NonBibRecord
 from .nonbibrecord import NonBibRecordList
 from .orcid_claims import OrcidClaims
 from .status import Status
+from .citation_changes import CitationChanges, CitationChange

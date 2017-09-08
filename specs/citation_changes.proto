@@ -1,0 +1,18 @@
+syntax = "proto3";
+import "status.proto";
+package adsmsg;
+
+message CitationChanges {
+    repeated CitationChange changes = 1;
+}
+
+message CitationChange {
+    string citing = 1;
+    string cited = 2;
+    string doi = 3;
+    string pid = 4;
+    string url = 5;
+    string score = 6;
+    Status status = 7;
+}
+
