@@ -28,13 +28,16 @@ Alternatively, a docker container can be built:
 
 ```
 docker build -t adsmsg .
-docker rm adsmg
-docker run -it --name adsmsg -v $PWD:/app adsmsg
-make clean
-make
+docker run -it --name adsmsg adsmsg
+```
+Or better, just run:
+
+```
+./rebuild.sh
 ```
 
-Every time the protocol buffers specifications are changed, 'make' should be run to regenerate the python code.
+Every time the protocol buffers specifications are changed.
+
 
 ### Testing
 
