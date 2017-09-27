@@ -2,27 +2,31 @@ syntax = "proto3";
 import "status.proto";
 package adsmsg;
 
-message NonBibRecord {
+message NonBibSolrRecord {
     string bibcode = 1;
-    int32 id = 2;
-    repeated string authors = 3;
-    bool refereed = 4;
-    repeated string simbad_objects = 5;
-    repeated string grants = 6;
-    repeated string citations = 7;
-    float boost = 8;
-    int32 citation_count = 9;
-    int32 read_count = 10;
-    int32 norm_cites = 11;
-    repeated string readers = 12;
-    repeated int32 downloads = 13;
-    repeated int32 reads = 14;
-    repeated string reference = 15;
-    repeated string ned_objects = 16;
-    Status status = 17;
+    repeated string author_count = 2;
+    bool refereed = 3;
+    repeated string simbad_objects = 4;
+    repeated string grants = 5;
+    repeated string citations = 6;
+    float boost = 7;
+    int32 citation_count = 8;
+    int32 read_count = 9;
+    repeated string readers = 10;
+    repeated int32 downloads = 11;
+    repeated int32 reads = 12;
+    repeated string reference = 13;
+    repeated string ned_objects = 14;
+    // data field keys are link sub types, values are counts    
+    map<string, int32> data = 15;
+    // data_counts holds the sum of all the counts in the data map
+    int32 data_count = 16;
+    // data link properties
+    repeated string property = 17;
+    Status status = 18;
 }    
 
-message NonBibRecordList {
-	repeated NonBibRecord nonbib_records = 1;
+message NonBibSolrRecordList {
+	repeated NonBibSolrRecord nonbib_records = 1;
 	Status status = 2;
 }

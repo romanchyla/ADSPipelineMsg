@@ -20,135 +20,30 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='nonbibrecord.proto',
   package='adsmsg',
   syntax='proto3',
-  serialized_pb=_b('\n\x12nonbibrecord.proto\x12\x06\x61\x64smsg\x1a\x0cstatus.proto\"\xd3\x02\n\x0cNonBibRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x0f\n\x07\x61uthors\x18\x03 \x03(\t\x12\x10\n\x08refereed\x18\x04 \x01(\x08\x12\x16\n\x0esimbad_objects\x18\x05 \x03(\t\x12\x0e\n\x06grants\x18\x06 \x03(\t\x12\x11\n\tcitations\x18\x07 \x03(\t\x12\r\n\x05\x62oost\x18\x08 \x01(\x02\x12\x16\n\x0e\x63itation_count\x18\t \x01(\x05\x12\x12\n\nread_count\x18\n \x01(\x05\x12\x12\n\nnorm_cites\x18\x0b \x01(\x05\x12\x0f\n\x07readers\x18\x0c \x03(\t\x12\x11\n\tdownloads\x18\r \x03(\x05\x12\r\n\x05reads\x18\x0e \x03(\x05\x12\x11\n\treference\x18\x0f \x03(\t\x12\x13\n\x0bned_objects\x18\x10 \x03(\t\x12\x1e\n\x06status\x18\x11 \x01(\x0e\x32\x0e.adsmsg.Status\"`\n\x10NonBibRecordList\x12,\n\x0enonbib_records\x18\x01 \x03(\x0b\x32\x14.adsmsg.NonBibRecord\x12\x1e\n\x06status\x18\x02 \x01(\x0e\x32\x0e.adsmsg.Statusb\x06proto3')
+  serialized_pb=_b('\n\x12nonbibrecord.proto\x12\x06\x61\x64smsg\x1a\x0cstatus.proto\"\xc1\x03\n\x10NonBibSolrRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x14\n\x0c\x61uthor_count\x18\x02 \x03(\t\x12\x10\n\x08refereed\x18\x03 \x01(\x08\x12\x16\n\x0esimbad_objects\x18\x04 \x03(\t\x12\x0e\n\x06grants\x18\x05 \x03(\t\x12\x11\n\tcitations\x18\x06 \x03(\t\x12\r\n\x05\x62oost\x18\x07 \x01(\x02\x12\x16\n\x0e\x63itation_count\x18\x08 \x01(\x05\x12\x12\n\nread_count\x18\t \x01(\x05\x12\x0f\n\x07readers\x18\n \x03(\t\x12\x11\n\tdownloads\x18\x0b \x03(\x05\x12\r\n\x05reads\x18\x0c \x03(\x05\x12\x11\n\treference\x18\r \x03(\t\x12\x13\n\x0bned_objects\x18\x0e \x03(\t\x12\x30\n\x04\x64\x61ta\x18\x0f \x03(\x0b\x32\".adsmsg.NonBibSolrRecord.DataEntry\x12\x12\n\ndata_count\x18\x10 \x01(\x05\x12\x10\n\x08property\x18\x11 \x03(\t\x12\x1e\n\x06status\x18\x12 \x01(\x0e\x32\x0e.adsmsg.Status\x1a+\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\"h\n\x14NonBibSolrRecordList\x12\x30\n\x0enonbib_records\x18\x01 \x03(\x0b\x32\x18.adsmsg.NonBibSolrRecord\x12\x1e\n\x06status\x18\x02 \x01(\x0e\x32\x0e.adsmsg.Statusb\x06proto3')
   ,
   dependencies=[status__pb2.DESCRIPTOR,])
 
 
 
 
-_NONBIBRECORD = _descriptor.Descriptor(
-  name='NonBibRecord',
-  full_name='adsmsg.NonBibRecord',
+_NONBIBSOLRRECORD_DATAENTRY = _descriptor.Descriptor(
+  name='DataEntry',
+  full_name='adsmsg.NonBibSolrRecord.DataEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='bibcode', full_name='adsmsg.NonBibRecord.bibcode', index=0,
+      name='key', full_name='adsmsg.NonBibSolrRecord.DataEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='id', full_name='adsmsg.NonBibRecord.id', index=1,
+      name='value', full_name='adsmsg.NonBibSolrRecord.DataEntry.value', index=1,
       number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='authors', full_name='adsmsg.NonBibRecord.authors', index=2,
-      number=3, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='refereed', full_name='adsmsg.NonBibRecord.refereed', index=3,
-      number=4, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='simbad_objects', full_name='adsmsg.NonBibRecord.simbad_objects', index=4,
-      number=5, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='grants', full_name='adsmsg.NonBibRecord.grants', index=5,
-      number=6, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='citations', full_name='adsmsg.NonBibRecord.citations', index=6,
-      number=7, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='boost', full_name='adsmsg.NonBibRecord.boost', index=7,
-      number=8, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='citation_count', full_name='adsmsg.NonBibRecord.citation_count', index=8,
-      number=9, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='read_count', full_name='adsmsg.NonBibRecord.read_count', index=9,
-      number=10, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='norm_cites', full_name='adsmsg.NonBibRecord.norm_cites', index=10,
-      number=11, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='readers', full_name='adsmsg.NonBibRecord.readers', index=11,
-      number=12, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='downloads', full_name='adsmsg.NonBibRecord.downloads', index=12,
-      number=13, type=5, cpp_type=1, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='reads', full_name='adsmsg.NonBibRecord.reads', index=13,
-      number=14, type=5, cpp_type=1, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='reference', full_name='adsmsg.NonBibRecord.reference', index=14,
-      number=15, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='ned_objects', full_name='adsmsg.NonBibRecord.ned_objects', index=15,
-      number=16, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='adsmsg.NonBibRecord.status', index=16,
-      number=17, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -159,6 +54,155 @@ _NONBIBRECORD = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=451,
+  serialized_end=494,
+)
+
+_NONBIBSOLRRECORD = _descriptor.Descriptor(
+  name='NonBibSolrRecord',
+  full_name='adsmsg.NonBibSolrRecord',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='bibcode', full_name='adsmsg.NonBibSolrRecord.bibcode', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='author_count', full_name='adsmsg.NonBibSolrRecord.author_count', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='refereed', full_name='adsmsg.NonBibSolrRecord.refereed', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='simbad_objects', full_name='adsmsg.NonBibSolrRecord.simbad_objects', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='grants', full_name='adsmsg.NonBibSolrRecord.grants', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='citations', full_name='adsmsg.NonBibSolrRecord.citations', index=5,
+      number=6, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='boost', full_name='adsmsg.NonBibSolrRecord.boost', index=6,
+      number=7, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='citation_count', full_name='adsmsg.NonBibSolrRecord.citation_count', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='read_count', full_name='adsmsg.NonBibSolrRecord.read_count', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='readers', full_name='adsmsg.NonBibSolrRecord.readers', index=9,
+      number=10, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='downloads', full_name='adsmsg.NonBibSolrRecord.downloads', index=10,
+      number=11, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='reads', full_name='adsmsg.NonBibSolrRecord.reads', index=11,
+      number=12, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='reference', full_name='adsmsg.NonBibSolrRecord.reference', index=12,
+      number=13, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ned_objects', full_name='adsmsg.NonBibSolrRecord.ned_objects', index=13,
+      number=14, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='data', full_name='adsmsg.NonBibSolrRecord.data', index=14,
+      number=15, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='data_count', full_name='adsmsg.NonBibSolrRecord.data_count', index=15,
+      number=16, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='property', full_name='adsmsg.NonBibSolrRecord.property', index=16,
+      number=17, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='adsmsg.NonBibSolrRecord.status', index=17,
+      number=18, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_NONBIBSOLRRECORD_DATAENTRY, ],
+  enum_types=[
+  ],
   options=None,
   is_extendable=False,
   syntax='proto3',
@@ -166,26 +210,26 @@ _NONBIBRECORD = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=45,
-  serialized_end=384,
+  serialized_end=494,
 )
 
 
-_NONBIBRECORDLIST = _descriptor.Descriptor(
-  name='NonBibRecordList',
-  full_name='adsmsg.NonBibRecordList',
+_NONBIBSOLRRECORDLIST = _descriptor.Descriptor(
+  name='NonBibSolrRecordList',
+  full_name='adsmsg.NonBibSolrRecordList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='nonbib_records', full_name='adsmsg.NonBibRecordList.nonbib_records', index=0,
+      name='nonbib_records', full_name='adsmsg.NonBibSolrRecordList.nonbib_records', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='status', full_name='adsmsg.NonBibRecordList.status', index=1,
+      name='status', full_name='adsmsg.NonBibSolrRecordList.status', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -203,30 +247,42 @@ _NONBIBRECORDLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=386,
-  serialized_end=482,
+  serialized_start=496,
+  serialized_end=600,
 )
 
-_NONBIBRECORD.fields_by_name['status'].enum_type = status__pb2._STATUS
-_NONBIBRECORDLIST.fields_by_name['nonbib_records'].message_type = _NONBIBRECORD
-_NONBIBRECORDLIST.fields_by_name['status'].enum_type = status__pb2._STATUS
-DESCRIPTOR.message_types_by_name['NonBibRecord'] = _NONBIBRECORD
-DESCRIPTOR.message_types_by_name['NonBibRecordList'] = _NONBIBRECORDLIST
+_NONBIBSOLRRECORD_DATAENTRY.containing_type = _NONBIBSOLRRECORD
+_NONBIBSOLRRECORD.fields_by_name['data'].message_type = _NONBIBSOLRRECORD_DATAENTRY
+_NONBIBSOLRRECORD.fields_by_name['status'].enum_type = status__pb2._STATUS
+_NONBIBSOLRRECORDLIST.fields_by_name['nonbib_records'].message_type = _NONBIBSOLRRECORD
+_NONBIBSOLRRECORDLIST.fields_by_name['status'].enum_type = status__pb2._STATUS
+DESCRIPTOR.message_types_by_name['NonBibSolrRecord'] = _NONBIBSOLRRECORD
+DESCRIPTOR.message_types_by_name['NonBibSolrRecordList'] = _NONBIBSOLRRECORDLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-NonBibRecord = _reflection.GeneratedProtocolMessageType('NonBibRecord', (_message.Message,), dict(
-  DESCRIPTOR = _NONBIBRECORD,
+NonBibSolrRecord = _reflection.GeneratedProtocolMessageType('NonBibSolrRecord', (_message.Message,), dict(
+
+  DataEntry = _reflection.GeneratedProtocolMessageType('DataEntry', (_message.Message,), dict(
+    DESCRIPTOR = _NONBIBSOLRRECORD_DATAENTRY,
+    __module__ = 'nonbibrecord_pb2'
+    # @@protoc_insertion_point(class_scope:adsmsg.NonBibSolrRecord.DataEntry)
+    ))
+  ,
+  DESCRIPTOR = _NONBIBSOLRRECORD,
   __module__ = 'nonbibrecord_pb2'
-  # @@protoc_insertion_point(class_scope:adsmsg.NonBibRecord)
+  # @@protoc_insertion_point(class_scope:adsmsg.NonBibSolrRecord)
   ))
-_sym_db.RegisterMessage(NonBibRecord)
+_sym_db.RegisterMessage(NonBibSolrRecord)
+_sym_db.RegisterMessage(NonBibSolrRecord.DataEntry)
 
-NonBibRecordList = _reflection.GeneratedProtocolMessageType('NonBibRecordList', (_message.Message,), dict(
-  DESCRIPTOR = _NONBIBRECORDLIST,
+NonBibSolrRecordList = _reflection.GeneratedProtocolMessageType('NonBibSolrRecordList', (_message.Message,), dict(
+  DESCRIPTOR = _NONBIBSOLRRECORDLIST,
   __module__ = 'nonbibrecord_pb2'
-  # @@protoc_insertion_point(class_scope:adsmsg.NonBibRecordList)
+  # @@protoc_insertion_point(class_scope:adsmsg.NonBibSolrRecordList)
   ))
-_sym_db.RegisterMessage(NonBibRecordList)
+_sym_db.RegisterMessage(NonBibSolrRecordList)
 
 
+_NONBIBSOLRRECORD_DATAENTRY.has_options = True
+_NONBIBSOLRRECORD_DATAENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 # @@protoc_insertion_point(module_scope)
