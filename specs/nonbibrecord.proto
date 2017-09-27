@@ -22,8 +22,9 @@ message NonBibSolrRecord {
     // data_counts holds the sum of all the counts in the data map
     int32 data_count = 16;
     // data link properties
-    repeated string property = 17;
-    Status status = 18;
+    repeated string esource = 17;
+    repeated string property = 18;
+    Status status = 19;
 }    
 
 message NonBibSolrRecordList {
