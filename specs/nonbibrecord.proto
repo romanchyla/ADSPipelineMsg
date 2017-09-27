@@ -4,7 +4,7 @@ package adsmsg;
 
 message NonBibSolrRecord {
     string bibcode = 1;
-    repeated string author_count = 2;
+    int32 author_count = 2;
     bool refereed = 3;
     repeated string simbad_objects = 4;
     repeated string grants = 5;
