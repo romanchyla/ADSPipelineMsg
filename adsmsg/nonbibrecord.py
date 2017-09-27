@@ -1,14 +1,14 @@
 from .msg import Msg
 from .protobuf import nonbibrecord_pb2
 
-class NonBibSolrRecord(Msg):
+class NonBibRecord(Msg):
 
     def __init__(self, *args, **kwargs):
-        super(NonBibSolrRecord, self).__init__(nonbibrecord_pb2.NonBibSolrRecord(), args, kwargs)
+        super(NonBibRecord, self).__init__(nonbibrecord_pb2.NonBibRecord(), args, kwargs)
 
 
-class NonBibSolrRecordList(Msg):
+class NonBibRecordList(Msg):
 
     def __init__(self, *args, **kwargs):
-        super(NonBibSolrRecordList, self).__init__(nonbibrecord_pb2.NonBibSolrRecordList(), args, kwargs)
+        super(NonBibRecordList, self).__init__(nonbibrecord_pb2.NonBibRecordList(), args, kwargs)
 
