@@ -26,12 +26,22 @@ message NonBibRecord {
     // data link properties
     repeated string esource = 17;
     repeated string property = 18;
-    Status status = 19;
+    repeated DataLinksRow data_links_rows = 19;
+    Status status = 20;
 }    
 
 
 message DataLinksValue {
 	repeated string value = 1;
+}
+
+// holds elements from a row in the nonbib DataLinksTable
+message DataLinksRow {
+	string link_type = 1;
+	string link_sub_type = 2;
+	repeated string url = 3;
+	repeated string title = 4;
+	int32 item_count = 5;
 }
 
 message NonBibRecordList {
