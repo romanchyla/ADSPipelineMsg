@@ -22,7 +22,7 @@ message NonBibRecord {
     int32 total_link_counts = 15;
     // map values can not be a repeated string, instead we make it a message
     // but not provided by nonbib data
-    map<string, DataLinksValue> data_links = 16;
+    map<string, DataLinksValue> links_data = 16;
     // data link properties
     repeated string esource = 17;
     repeated string property = 18;

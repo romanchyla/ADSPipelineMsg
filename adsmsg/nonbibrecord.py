@@ -5,15 +5,15 @@ class NonBibRecord(Msg):
 
     def __init__(self, *args, **kwargs):
         instance = nonbibrecord_pb2.NonBibRecord()
-        data_links = kwargs.pop('data_links', None) # remove for special handling
+        links_data = kwargs.pop('links_data', None) # remove for special handling
         data_links_rows = kwargs.pop('data_links_rows', None) 
         super(NonBibRecord, self).__init__(instance, args, kwargs)
-        if data_links:
-            # convert data_links dict <key, string array> to inner record
-            # probably vestigial since data links does not come from nonbib
-            for k in data_links:
-                instance.data_links.get_or_create(k) 
-                instance.data_links[k].value.extend(data_links[k])
+        if links_data:
+            # convert links_data dict <key, string array> to inner record
+            # eventually vestigial
+            for k in links_data:
+                instance.links_data.get_or_create(k) 
+                instance.links_data[k].value.extend(links_data[k])
         if data_links_rows:
             # populate rows from database field
             for current in data_links_rows:

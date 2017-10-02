@@ -16,7 +16,7 @@ class TestMsg(unittest.TestCase):
     def test(self):
         nonbib_data = {'bibcode': '2003ASPC..295..361M', 
                        'boost': 3.1,
-                       'data_links': {'a': ['b', 'c'], 'w': ['x', 'y', 'z']},
+                       'links_data': {'a': ['b', 'c'], 'w': ['x', 'y', 'z']},
                        'total_link_counts': 20,
                        'esource': ['a', 's', 'd', 'f'],
                        'data': ['NED:15', 'CDS:5'],
@@ -31,8 +31,8 @@ class TestMsg(unittest.TestCase):
         m = NonBibRecord(**nonbib_data)
         self.assertEqual(m.bibcode, nonbib_data['bibcode'])
         self.assertAlmostEqual(m.boost, nonbib_data['boost'], places=5)
-        self.assertEqual(m.data_links['a'].value, nonbib_data['data_links']['a'])
-        self.assertEqual(m.data_links['w'].value, nonbib_data['data_links']['w'])
+        self.assertEqual(m.links_data['a'].value, nonbib_data['links_data']['a'])
+        self.assertEqual(m.links_data['w'].value, nonbib_data['links_data']['w'])
         self.assertEqual(m.total_link_counts, nonbib_data['total_link_counts'])
         self.assertEqual(m.data.data, nonbib_data['data']) # data is a special field name
         self.assertEqual(m.esource, nonbib_data['esource'])
