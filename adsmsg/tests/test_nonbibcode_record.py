@@ -24,9 +24,12 @@ class TestMsg(unittest.TestCase):
                        'data_links_rows': [{'link_type': 'a', 'link_sub_type': 'b', 
                                             'url': ['http://a', 'http://b'],
                                             'title': ['x', 'y'],
-                                            'item_count':1}]}
+                                            'item_count':1},
+                                           {'link_type': 'aa', 'link_sub_type': 'bb', 
+                                            'url': ['http://aa', 'http://bb'],
+                                            'title': ['xx', 'yy'],
+                                            'item_count':2}]}
         m = NonBibRecord(**nonbib_data)
-        print 'data links rows', m.data.data_links_rows[0].item_count
         self.assertEqual(m.bibcode, nonbib_data['bibcode'])
         self.assertEqual(m.refereed, nonbib_data['refereed'])
         self.assertEqual(m.downloads, nonbib_data['downloads'])
@@ -35,13 +38,14 @@ class TestMsg(unittest.TestCase):
         self.assertEqual(m.data_links['a'].value, nonbib_data['data_links']['a'])
         self.assertEqual(m.data_links['w'].value, nonbib_data['data_links']['w'])
         self.assertEqual(m.total_link_counts, nonbib_data['total_link_counts'])
-        self.assertEqual(m.data.data, nonbib_data['data'])
+        self.assertEqual(m.data.data, nonbib_data['data']) # data is a special field name
         self.assertEqual(m.esource, nonbib_data['esource'])
-        self.assertEqual(m.data.data_links_rows[0].link_type, nonbib_data['data_links_rows'][0]['link_type'])
-        self.assertEqual(m.data.data_links_rows[0].link_sub_type, nonbib_data['data_links_rows'][0]['link_sub_type'])
-        self.assertEqual(m.data.data_links_rows[0].url, nonbib_data['data_links_rows'][0]['url'])
-        self.assertEqual(m.data.data_links_rows[0].title, nonbib_data['data_links_rows'][0]['title'])
-        self.assertEqual(m.data.data_links_rows[0].item_count, nonbib_data['data_links_rows'][0]['item_count'])
+        for i in range(len(nonbib_data['data_links_rows'])):
+            self.assertEqual(m.data_links_rows[i].link_type, nonbib_data['data_links_rows'][i]['link_type'])
+            self.assertEqual(m.data_links_rows[i].link_sub_type, nonbib_data['data_links_rows'][i]['link_sub_type'])
+            self.assertEqual(m.data_links_rows[i].url, nonbib_data['data_links_rows'][i]['url'])
+            self.assertEqual(m.data_links_rows[i].title, nonbib_data['data_links_rows'][i]['title'])
+            self.assertEqual(m.data_links_rows[i].item_count, nonbib_data['data_links_rows'][i]['item_count'])
 
 
 
