@@ -4,23 +4,37 @@ package adsmsg;
 
 message NonBibRecord {
     string bibcode = 1;
-    int32 id = 2;
-    repeated string authors = 3;
-    bool refereed = 4;
-    repeated string simbad_objects = 5;
-    repeated string grants = 6;
-    repeated string citations = 7;
-    float boost = 8;
-    int32 citation_count = 9;
-    int32 read_count = 10;
-    int32 norm_cites = 11;
-    repeated string readers = 12;
-    repeated int32 downloads = 13;
-    repeated int32 reads = 14;
-    repeated string reference = 15;
-    repeated string ned_objects = 16;
-    Status status = 17;
+    //bool refereed = 2;
+    repeated string simbad_objects = 3;
+    repeated string grants = 4;
+    //repeated string citations = 5;
+    float boost = 6;
+    int32 citation_count = 7;
+    int32 read_count = 8;
+    repeated string readers = 9;
+    //repeated int32 downloads = 10;
+    //repeated int32 reads = 11;
+    repeated string reference = 12;
+    repeated string ned_objects = 13;
+    // data field is array of sub types:count: ['NED:15', 'CDS:5']
+    repeated string data = 14;
+    // data_counts holds the sum of all the counts in the data map
+    int32 total_link_counts = 15;
+    repeated string esource = 17;
+    repeated string property = 18;
+    repeated DataLinksRow data_links_rows = 19;
+    Status status = 20;
 }    
+
+
+// holds elements from a row in the nonbib DataLinksTable
+message DataLinksRow {
+	string link_type = 1;
+	string link_sub_type = 2;
+	repeated string url = 3;
+	repeated string title = 4;
+	int32 item_count = 5;
+}
 
 message NonBibRecordList {
 	repeated NonBibRecord nonbib_records = 1;
