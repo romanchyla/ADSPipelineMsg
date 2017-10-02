@@ -14,9 +14,8 @@ class TestMsg(unittest.TestCase):
 
 
     def test(self):
-        nonbib_data = {'bibcode': '2003ASPC..295..361M', 'refereed': False,
-                       'downloads': [0,0], 'boost': 3.1,
-                       'reads': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+        nonbib_data = {'bibcode': '2003ASPC..295..361M', 
+                       'boost': 3.1,
                        'data_links': {'a': ['b', 'c'], 'w': ['x', 'y', 'z']},
                        'total_link_counts': 20,
                        'esource': ['a', 's', 'd', 'f'],
@@ -31,9 +30,6 @@ class TestMsg(unittest.TestCase):
                                             'item_count':2}]}
         m = NonBibRecord(**nonbib_data)
         self.assertEqual(m.bibcode, nonbib_data['bibcode'])
-        self.assertEqual(m.refereed, nonbib_data['refereed'])
-        self.assertEqual(m.downloads, nonbib_data['downloads'])
-        self.assertEqual(m.reads, nonbib_data['reads'])
         self.assertAlmostEqual(m.boost, nonbib_data['boost'], places=5)
         self.assertEqual(m.data_links['a'].value, nonbib_data['data_links']['a'])
         self.assertEqual(m.data_links['w'].value, nonbib_data['data_links']['w'])

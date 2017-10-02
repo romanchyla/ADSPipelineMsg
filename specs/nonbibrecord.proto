@@ -4,16 +4,16 @@ package adsmsg;
 
 message NonBibRecord {
     string bibcode = 1;
-    bool refereed = 2;
+    //bool refereed = 2;
     repeated string simbad_objects = 3;
     repeated string grants = 4;
-    repeated string citations = 5;
+    //repeated string citations = 5;
     float boost = 6;
     int32 citation_count = 7;
     int32 read_count = 8;
     repeated string readers = 9;
-    repeated int32 downloads = 10;
-    repeated int32 reads = 11;
+    //repeated int32 downloads = 10;
+    //repeated int32 reads = 11;
     repeated string reference = 12;
     repeated string ned_objects = 13;
     // data field is array of sub types:count: ['NED:15', 'CDS:5']
