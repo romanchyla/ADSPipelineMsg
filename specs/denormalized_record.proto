@@ -3,6 +3,11 @@ import "status.proto";
 package adsmsg;
 
 message DenormalizedRecord {
+
+    /* Denormalized record holds ALL fields that are known to SOLR; even if a
+     * pipeline might be using only some.
+     */
+     
     string abstract = 1;
     string ack = 2;
     repeated string aff = 3;
@@ -12,8 +17,8 @@ message DenormalizedRecord {
     repeated string author = 7;
     int32 author_count = 8;
     repeated string author_facet = 9;
-    //repeated string author_native = 10; // Waiting for montysolr
     repeated string author_facet_hier = 11;
+    //repeated string author_native = 10; // Waiting for montysolr
     repeated string author_norm = 12;
     string bibcode = 13;
     repeated string bibgroup = 14;
@@ -28,18 +33,23 @@ message DenormalizedRecord {
     repeated string comment = 23;
     repeated string copyright = 24;
     repeated string database = 25;
-    string date = 26; // YYYY-MM[-DD]
     repeated string data = 27;
+    int32 data_count = 93;
     repeated string data_facet = 28;
+    string date = 26; // YYYY-MM[-DD]
     string doctype = 29;
     repeated string doctype_facet_hier = 30;
     repeated string doi = 31;
     string eid = 32;
     repeated string email = 33;
+    string entry_date = 76;
+    repeated string esources = 94;
     repeated string facility = 34;
     string first_author = 35;
     repeated string first_author_facet_hier = 36;
     string first_author_norm = 37;
+    string fulltext_ctime = 84;
+    string fulltext_mtime = 85;
     repeated string grant = 38;
     repeated string grant_facet_hier = 39;
     uint64 id = 40;
@@ -53,29 +63,48 @@ message DenormalizedRecord {
     repeated string keyword_schema = 48;
     string lang = 49;
     repeated string links_data = 50;
+    string metadata_ctime = 82;
+    string metadata_mtime = 83;
+    string metrics_ctime = 88;
+    string metrics_mtime = 89;
+    repeated int32 nedid = 79;
+    repeated string nedtype = 80;
+    repeated string ned_object_facet_hier = 81;
+    string nonbib_ctime = 86;
+    string nonbib_mtime = 87;
     repeated string orcid = 51;
     repeated string orcid_pub = 52;
     repeated string orcid_user = 53;
     repeated string orcid_other = 54;
+    string orcid_ctime = 90;
+    string orcid_mtime = 91;
+    repeated string origin = 92;
     repeated string page = 55;
+    int32 page_count = 75;
+    string page_range = 77;
     repeated string property = 56;
     string pub = 57;
-    repeated string pubnote = 58;
     string pub_raw = 59;
+    repeated string pubnote = 58;
     string pubdate = 60;
     int32 read_count = 61;
     repeated string reader = 62;
     uint64 recid = 63;
     repeated string reference = 64;
-    repeated uint64 simbid = 65;
+    repeated int32 simbid = 65;
     repeated string simbtype = 66;
     repeated string simbad_object_facet_hier = 67;
+    // used by pipeline, this is not solr field
+    Status status = 74;
     string thesis = 68;
     repeated string title = 69;
+    string update_timestamp = 78;
     repeated string vizier = 70;
     repeated string vizier_facet = 71;
     string volume = 72;
     string year = 73;
-    Status status = 74;
-    int32 page_count = 75;
+    
+    // current highest id: 94
+    
+    
 }

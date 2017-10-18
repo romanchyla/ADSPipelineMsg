@@ -62,7 +62,8 @@ class TestDenormalizedRecord(unittest.TestCase):
              'bibstem_facet': u'ApJ',
              'body': u"body body",
              'citation_count': 0,
-             'data': [u'CDS', u'NED'],
+             'data': [u'CDS:15', u'NED:5'],
+             'data_count': 20,
              'data_facet': [u'CDS', u'NED'],
              'database': [u'astronomy'],
              'date': u'2015-12-01T00:00:00.000000Z',
@@ -71,9 +72,12 @@ class TestDenormalizedRecord(unittest.TestCase):
              'doi': [u'10.1088/0004-637X/815/2/133'],
              'eid': u'133',
              'email': [u'jhshinn@kasi.re.kr', u'-'],
+             'entry_date': u'2015-12-01T00:00:00.000000Z',
+             'esources': [u'AUTHOR_PUB', u'PUB_HTML'],
              'first_author': u'Shinn, Jong-Ho',
              'first_author_facet_hier': [u'0/Shinn, J', u'1/Shinn, J/Shinn, Jong-Ho'],
              'first_author_norm': u'Shinn, J',
+             'fulltext_mtime': u'2019-12-01T00:00:00.000000Z',
              'identifier': [u'1511.03789',
               u'10.1088/0004-637X/815/2/133',
               u'2015arXiv151103789S'],
@@ -89,7 +93,17 @@ class TestDenormalizedRecord(unittest.TestCase):
               u'Astronomy'],
              'links_data': [u'{"access": "", "instances": "7", "title": "", "type": "simbad", "url": "http://$SIMBAD$/simbo.pl?bibcode=2015ApJ...815..133S"}',
               u'{"access": "open", "instances": "", "title": "", "type": "pdf", "url": "http://stacks.iop.org/0004-637X/815/133/pdf"}'],
+             'metadata_mtime': u'2019-12-01T00:00:00.000000Z',
+             'metrics_mtime': u'2019-12-01T00:00:00.000000Z',
+             'nedid': [4,5,6],
+             'nedtype': [u'foo', u'bar', u'baz'],
+             'ned_object_facet_hier': [u'0/foo', u'1/foo/star'],
+             'nonbib_mtime': u'2019-12-01T00:00:00.000000Z',
+             'origin': [u'Elsevier', u'ADS metatada'],
+             'orcid_mtime': u'2019-12-01T00:00:00.000000Z',
              'page': [u'133'],
+             'page_count': 15,
+             'page_range': u'133-148',
              'property': [u'OPENACCESS', u'REFEREED'],
              'pub': u'The Astrophysical Journal',
              'pub_raw': u'The Astrophysical Journal, Volume 815, Issue 2, article id. 133, <NUMPAGES>14</NUMPAGES> pp. (2015).',
@@ -97,6 +111,7 @@ class TestDenormalizedRecord(unittest.TestCase):
              'pubnote': [u'33 pages, 7 figures, 5 tables, ApJ in press; doi:10.1088/0004-637X/815/2/133'],
              'read_count': 10,
              'reference': [u'1941ApJ....93...70H', u'1966ApJ...145..811P'],
+             'simbid': [1,2,3],
              'title': [u'Ultraviolet Radiative Transfer Modeling of Nearby Galaxies'],
              'volume': u'815',
              'year': u'2015',
@@ -108,7 +123,7 @@ class TestDenormalizedRecord(unittest.TestCase):
         expected = {}
         expected.update(solr_record)
         expected.pop('citation_count')
-        
+        self.maxDiff = None
         self.assertEqual(expected, r.toJSON())
 
 if __name__ == '__main__':

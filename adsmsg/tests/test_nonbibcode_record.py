@@ -26,7 +26,8 @@ class TestMsg(unittest.TestCase):
                                            {'link_type': 'aa', 'link_sub_type': 'bb', 
                                             'url': ['http://aa', 'http://bb'],
                                             'title': ['xx', 'yy'],
-                                            'item_count':2}]}
+                                            'item_count':2}],
+                       }
         m = NonBibRecord(**nonbib_data)
         self.assertEqual(m.bibcode, nonbib_data['bibcode'])
         self.assertAlmostEqual(m.boost, nonbib_data['boost'], places=5)
