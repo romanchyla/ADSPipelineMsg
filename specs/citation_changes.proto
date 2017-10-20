@@ -1,5 +1,6 @@
 syntax = "proto3";
 import "status.proto";
+import "citation_changes_content_type.proto";
 package adsmsg;
 
 message CitationChanges {
@@ -9,10 +10,9 @@ message CitationChanges {
 message CitationChange {
     string citing = 1;
     string cited = 2;
-    string doi = 3;
-    string pid = 4;
-    string url = 5;
-    string score = 6;
-    Status status = 7;
+    CitationChangeContentType content_type = 3;
+    string content = 4;
+    bool resolved = 5;
+    Status status = 6;
 }
 

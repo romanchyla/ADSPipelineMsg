@@ -1,0 +1,8 @@
+syntax = "proto3";
+package adsmsg;
+
+enum CitationChangeContentType {
+  doi = 0;
+  pid = 1;
+  url = 2;
+}
