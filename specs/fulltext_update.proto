@@ -6,5 +6,7 @@ message FulltextUpdate {
     string bibcode = 1;
     string body = 2;
     Status status = 3;
+    string acknowledgements = 4;
+    repeated string dataset = 5;
 }
 
