@@ -42,7 +42,37 @@ class TestMsg(unittest.TestCase):
             else:
                 self.assertEqual(getattr(m, key), metrics_data[key])
         self.verify_json(m, 'simple test')
-    
+
+    def test_json_defaults(self):
+        """test filling in default values in json"""
+
+        # use some very incomplete test data
+        metrics_data = {'bibcode': '1954PhRv...93..256R'}
+        m = MetricsRecord(**metrics_data)
+
+        # verify default values not added by default
+        j = m.toJSON()
+        # verify a default values was not added
+        self.assertRaises(KeyError, lambda: j['refereed'])
+
+        # now verify defaults are added when requested
+        j = m.toJSON(including_default_value_fields=True)
+        self.assertEqual(0, j['an_citations'])
+        self.assertEqual(0, j['an_refereed_citations'])
+        self.assertEqual(0, j['author_num'])
+        self.assertEqual(0, j['citation_num'])
+        self.assertEqual(0, len(j['citations']))
+        self.assertEqual(0, len(j['downloads']))
+        self.assertEqual(0, len(j['reads']))
+        self.assertFalse(j['refereed'])
+        self.assertEqual(0, j['refereed_citation_num'])
+        self.assertEqual(0, len(j['refereed_citations']))
+        self.assertEqual(0, j['reference_num'])
+        self.assertEqual(0, j['rn_citations'])
+        self.assertEqual(0, len(j['rn_citation_data']))
+        self.assertEqual(0, len(j['rn_citations_hist']))
+
+
     def verify_json(self, metrics_record, message):
         j = metrics_record.toJSON()
         test = loads(dumps(j))
