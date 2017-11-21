@@ -90,11 +90,13 @@ class Msg(object):
         return self._data
 
 
-    def toJSON(self, return_string=False):
+    def toJSON(self, return_string=False, including_default_value_fields=False):
         if return_string:
-            return json_format.MessageToJson(self.__dict__['_data'])
+            return json_format.MessageToJson(self.__dict__['_data'], 
+                                             including_default_value_fields=including_default_value_fields)
         return json_format.MessageToDict(self.__dict__['_data'],
-                    preserving_proto_field_name=True)
+                    preserving_proto_field_name=True, 
+                                         including_default_value_fields=including_default_value_fields)
 
 
     def __json__(self):
