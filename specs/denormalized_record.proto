@@ -33,9 +33,7 @@ message DenormalizedRecord {
     repeated string comment = 23;
     repeated string copyright = 24;
     repeated string database = 25;
-    repeated string data = 27;
     int32 data_count = 93;
-    repeated string data_facet = 28;
     string date = 26; // YYYY-MM[-DD]
     string doctype = 29;
     repeated string doctype_facet_hier = 30;
