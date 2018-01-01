@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='nonbibrecord.proto',
   package='adsmsg',
   syntax='proto3',
-  serialized_pb=_b('\n\x12nonbibrecord.proto\x12\x06\x61\x64smsg\x1a\x0cstatus.proto\"\xea\x02\n\x0cNonBibRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x16\n\x0esimbad_objects\x18\x03 \x03(\t\x12\x0e\n\x06grants\x18\x04 \x03(\t\x12\r\n\x05\x62oost\x18\x06 \x01(\x02\x12\x16\n\x0e\x63itation_count\x18\x07 \x01(\x05\x12\x12\n\nread_count\x18\x08 \x01(\x05\x12\x0f\n\x07readers\x18\t \x03(\t\x12\x11\n\treference\x18\x0c \x03(\t\x12\x13\n\x0bned_objects\x18\r \x03(\t\x12\x0c\n\x04\x64\x61ta\x18\x0e \x03(\t\x12\x19\n\x11total_link_counts\x18\x0f \x01(\x05\x12\x0f\n\x07\x65source\x18\x11 \x03(\t\x12\x10\n\x08property\x18\x12 \x03(\t\x12-\n\x0f\x64\x61ta_links_rows\x18\x13 \x03(\x0b\x32\x14.adsmsg.DataLinksRow\x12\x1e\n\x06status\x18\x14 \x01(\x0e\x32\x0e.adsmsg.Status\x12\x12\n\nnorm_cites\x18\x15 \x01(\x05\"h\n\x0c\x44\x61taLinksRow\x12\x11\n\tlink_type\x18\x01 \x01(\t\x12\x15\n\rlink_sub_type\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x03(\t\x12\r\n\x05title\x18\x04 \x03(\t\x12\x12\n\nitem_count\x18\x05 \x01(\x05\"`\n\x10NonBibRecordList\x12,\n\x0enonbib_records\x18\x01 \x03(\x0b\x32\x14.adsmsg.NonBibRecord\x12\x1e\n\x06status\x18\x02 \x01(\x0e\x32\x0e.adsmsg.Statusb\x06proto3')
+  serialized_pb=_b('\n\x12nonbibrecord.proto\x12\x06\x61\x64smsg\x1a\x0cstatus.proto\"\xea\x02\n\x0cNonBibRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x16\n\x0esimbad_objects\x18\x03 \x03(\t\x12\x0e\n\x06grants\x18\x04 \x03(\t\x12\r\n\x05\x62oost\x18\x06 \x01(\x02\x12\x16\n\x0e\x63itation_count\x18\x07 \x01(\x05\x12\x12\n\nread_count\x18\x08 \x01(\x05\x12\x0f\n\x07readers\x18\t \x03(\t\x12\x11\n\treference\x18\x0c \x03(\t\x12\x13\n\x0bned_objects\x18\r \x03(\t\x12\x0c\n\x04\x64\x61ta\x18\x0e \x03(\t\x12\x19\n\x11total_link_counts\x18\x0f \x01(\x05\x12\x0f\n\x07\x65source\x18\x11 \x03(\t\x12\x10\n\x08property\x18\x12 \x03(\t\x12-\n\x0f\x64\x61ta_links_rows\x18\x13 \x03(\x0b\x32\x14.adsmsg.DataLinksRow\x12\x1e\n\x06status\x18\x14 \x01(\x0e\x32\x0e.adsmsg.Status\x12\x12\n\nnorm_cites\x18\x15 \x01(\x05\"h\n\x0c\x44\x61taLinksRow\x12\x11\n\tlink_type\x18\x01 \x01(\t\x12\x15\n\rlink_sub_type\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x03(\t\x12\r\n\x05title\x18\x04 \x03(\t\x12\x12\n\nitem_count\x18\x05 \x01(\x05\"`\n\x10NonBibRecordList\x12,\n\x0enonbib_records\x18\x01 \x03(\x0b\x32\x14.adsmsg.NonBibRecord\x12\x1e\n\x06status\x18\x02 \x01(\x0e\x32\x0e.adsmsg.Status\"Q\n\x0f\x44\x61taLinksRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12-\n\x0f\x64\x61ta_links_rows\x18\x02 \x03(\x0b\x32\x14.adsmsg.DataLinksRowb\x06proto3')
   ,
   dependencies=[status__pb2.DESCRIPTOR,])
 
@@ -259,13 +259,53 @@ _NONBIBRECORDLIST = _descriptor.Descriptor(
   serialized_end=611,
 )
 
+
+_DATALINKSRECORD = _descriptor.Descriptor(
+  name='DataLinksRecord',
+  full_name='adsmsg.DataLinksRecord',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='bibcode', full_name='adsmsg.DataLinksRecord.bibcode', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='data_links_rows', full_name='adsmsg.DataLinksRecord.data_links_rows', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=613,
+  serialized_end=694,
+)
+
 _NONBIBRECORD.fields_by_name['data_links_rows'].message_type = _DATALINKSROW
 _NONBIBRECORD.fields_by_name['status'].enum_type = status__pb2._STATUS
 _NONBIBRECORDLIST.fields_by_name['nonbib_records'].message_type = _NONBIBRECORD
 _NONBIBRECORDLIST.fields_by_name['status'].enum_type = status__pb2._STATUS
+_DATALINKSRECORD.fields_by_name['data_links_rows'].message_type = _DATALINKSROW
 DESCRIPTOR.message_types_by_name['NonBibRecord'] = _NONBIBRECORD
 DESCRIPTOR.message_types_by_name['DataLinksRow'] = _DATALINKSROW
 DESCRIPTOR.message_types_by_name['NonBibRecordList'] = _NONBIBRECORDLIST
+DESCRIPTOR.message_types_by_name['DataLinksRecord'] = _DATALINKSRECORD
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 NonBibRecord = _reflection.GeneratedProtocolMessageType('NonBibRecord', (_message.Message,), dict(
@@ -288,6 +328,13 @@ NonBibRecordList = _reflection.GeneratedProtocolMessageType('NonBibRecordList', 
   # @@protoc_insertion_point(class_scope:adsmsg.NonBibRecordList)
   ))
 _sym_db.RegisterMessage(NonBibRecordList)
+
+DataLinksRecord = _reflection.GeneratedProtocolMessageType('DataLinksRecord', (_message.Message,), dict(
+  DESCRIPTOR = _DATALINKSRECORD,
+  __module__ = 'nonbibrecord_pb2'
+  # @@protoc_insertion_point(class_scope:adsmsg.DataLinksRecord)
+  ))
+_sym_db.RegisterMessage(DataLinksRecord)
 
 
 # @@protoc_insertion_point(module_scope)

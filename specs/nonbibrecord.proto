@@ -37,3 +37,9 @@ message NonBibRecordList {
 	repeated NonBibRecord nonbib_records = 1;
 	Status status = 2;
 }
+
+// holds elements from a bibcode in nonbib DataLinksTable
+message DataLinksRecord {
+    string bibcode = 1;
+    repeated DataLinksRow data_links_rows = 2;
+}

@@ -23,3 +23,9 @@ class NonBibRecordList(Msg):
     def __init__(self, *args, **kwargs):
         super(NonBibRecordList, self).__init__(nonbibrecord_pb2.NonBibRecordList(), args, kwargs)
 
+
+class DataLinksRecord(Msg):
+
+    def __init__(self, *args, **kwargs):
+        super(DataLinksRecord, self).__init__(nonbibrecord_pb2.DataLinksRecord(), args, kwargs)
+
