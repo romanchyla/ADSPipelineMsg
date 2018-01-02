@@ -43,3 +43,8 @@ message DataLinksRecord {
     string bibcode = 1;
     repeated DataLinksRow data_links_rows = 2;
 }
+
+message DataLinksRecordList {
+	repeated DataLinksRecord datalinks_records = 1;
+	Status status = 2;
+}
