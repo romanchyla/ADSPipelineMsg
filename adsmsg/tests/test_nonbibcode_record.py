@@ -121,8 +121,8 @@ class TestMsg(unittest.TestCase):
         }
         m = DataLinksRecordList()
         m.status = datalinks_list['status']
-        for datalinks_data in datalinks_list['datalinks_records']:
-            m.datalinks_records.add(**datalinks_data)
+        for datalinks_record in datalinks_list['datalinks_records']:
+            m.datalinks_records.add(**datalinks_record)
 
         self.assertEqual(m.status, datalinks_list['status'])
         for i in range(len(datalinks_list['datalinks_records'])):
