@@ -2,7 +2,7 @@
 import unittest
 from adsmsg import msg
 
-from adsmsg.nonbibrecord import NonBibRecord
+from adsmsg.nonbibrecord import NonBibRecord, DataLinksRecord, DataLinksRecordList
 
 class TestMsg(unittest.TestCase):
 
@@ -13,7 +13,7 @@ class TestMsg(unittest.TestCase):
         unittest.TestCase.tearDown(self)
 
 
-    def test(self):
+    def test_nonbib(self):
         """test creation of protobuf 
 
         should include at least all fields listed AdsDataSqlSync:adsdata/run.py:nonbib_to_master_fields"""
@@ -61,6 +61,83 @@ class TestMsg(unittest.TestCase):
             self.assertEqual(m.data_links_rows[i].title, nonbib_data['data_links_rows'][i]['title'])
             self.assertEqual(m.data_links_rows[i].item_count, nonbib_data['data_links_rows'][i]['item_count'])
 
+
+    def test_datalinks(self):
+        """test creation of protobuf
+
+        should include at least all fields listed AdsDataSqlSync:adsdata/run.py:nonbib_to_master_fields"""
+        datalinks_data = {'bibcode': '2003ASPC..295..361M',
+                          'data_links_rows': [{'link_type': 'a', 'link_sub_type': 'b',
+                                               'url': ['http://a', 'http://b'],
+                                               'title': ['x', 'y'],
+                                               'item_count':1},
+                                              {'link_type': 'aa', 'link_sub_type': 'bb',
+                                               'url': ['http://aa', 'http://bb'],
+                                               'title': ['xx', 'yy'],
+                                               'item_count':2}]
+                          }
+        m = DataLinksRecord(**datalinks_data)
+        self.assertEqual(m.bibcode, datalinks_data['bibcode'])
+
+        for i in range(len(datalinks_data['data_links_rows'])):
+            self.assertEqual(m.data_links_rows[i].link_type, datalinks_data['data_links_rows'][i]['link_type'])
+            self.assertEqual(m.data_links_rows[i].link_sub_type, datalinks_data['data_links_rows'][i]['link_sub_type'])
+            self.assertEqual(m.data_links_rows[i].url, datalinks_data['data_links_rows'][i]['url'])
+            self.assertEqual(m.data_links_rows[i].title, datalinks_data['data_links_rows'][i]['title'])
+            self.assertEqual(m.data_links_rows[i].item_count, datalinks_data['data_links_rows'][i]['item_count'])
+
+
+    def test_datalinks_list(self):
+        datalinks_list = {
+            'status': 2,    #name='new', index=2, number=2,
+            'datalinks_records':[{'bibcode': '2013MNRAS.435.1904M',
+                                  'data_links_rows': [{'link_type': 'ESOURCE', 'link_sub_type': 'EPRINT_HTML',
+                                         'url': ['http://arxiv.org/abs/1307.6556'], 'title': [''], 'item_count':0},
+                                        {'link_type': 'ESOURCE', 'link_sub_type': 'EPRINT_PDF',
+                                         'url': ['http://arxiv.org/pdf/1307.6556'], 'title': [''], 'item_count':0},
+                                        {'link_type': 'ESOURCE', 'link_sub_type': 'PUB_HTML',
+                                         'url': ['http://dx.doi.org/10.1093%2Fmnras%2Fstt1379'], 'title': [''], 'item_count':0},
+                                        {'link_type': 'ESOURCE', 'link_sub_type': 'PUB_PDF',
+                                         'url': ['http://mnras.oxfordjournals.org/content/435/3/1904.full.pdf'], 'title': [''], 'item_count':0}]},
+                                 {'bibcode': '2013MNRAS.435.1904M',
+                                  'data_links_rows': [{'link_type': 'DATA', 'link_sub_type': 'CXO',
+                                         'url': ['http://cda.harvard.edu/chaser?obsid=494'], 'title': ['Chandra Data Archive ObsIds 494'], 'item_count':27},
+                                        {'link_type': 'DATA', 'link_sub_type': 'ESA',
+                                         'url': ['http://archives.esac.esa.int/ehst/#bibcode=2013MNRAS.435.1904M'], 'title': ['European HST References (EHST)'], 'item_count':1},
+                                        {'link_type': 'DATA', 'link_sub_type': 'HEASARC',
+                                         'url': ['http://heasarc.gsfc.nasa.gov/cgi-bin/W3Browse/biblink.pl?code=2013MNRAS.435.1904M'], 'title': ['s'], 'item_count':1},
+                                        {'link_type': 'DATA', 'link_sub_type': 'Herschel',
+                                         'url': ['http://herschel.esac.esa.int/hpt/publicationdetailsview.do?bibcode=2013MNRAS.435.1904M'], 'title': ['s'], 'item_count':1},
+                                        {'link_type': 'DATA', 'link_sub_type': 'NED',
+                                         'url': ['http://$NED$/cgi-bin/nph-objsearch?search_type=Search&refcode=2013MNRAS.435.1904M'], 'title': ['NED Objects (1)'], 'item_count':1},
+                                        {'link_type': 'DATA', 'link_sub_type': 'SIMBAD',
+                                         'url': ['http://$SIMBAD$/simbo.pl?bibcode=2013MNRAS.435.1904M'], 'title': ['SIMBAD Objects (30)'], 'item_count':30},
+                                        {'link_type': 'DATA', 'link_sub_type': 'XMM',
+                                         'url': ['http://nxsa.esac.esa.int/nxsa-web/#obsid=0097820101'], 'title': ['XMM-Newton Observation Number 0097820101'], 'item_count':1}]},
+                                 {'bibcode': '2017MNRAS.467.3556B',
+                                  'data_links_rows': [
+                                        {'link_type': 'PRESENTATION',  'link_sub_type': '',
+                                         'url': ['http://www.astro.lu.se/~alexey/animations.html'], 'title': [''], 'item_count':0}]}]
+        }
+        m = DataLinksRecordList()
+        m.status = datalinks_list['status']
+        for datalinks_record in datalinks_list['datalinks_records']:
+            m.datalinks_records.add(**datalinks_record)
+
+        self.assertEqual(m.status, datalinks_list['status'])
+        for i in range(len(datalinks_list['datalinks_records'])):
+            self.assertEqual(m.datalinks_records[i].bibcode, datalinks_list['datalinks_records'][i]['bibcode'])
+            for j in range (len(datalinks_list['datalinks_records'][i]['data_links_rows'])):
+                self.assertEqual(m.datalinks_records[i].data_links_rows[j].link_type,
+                                 datalinks_list['datalinks_records'][i]['data_links_rows'][j]['link_type'])
+                self.assertEqual(m.datalinks_records[i].data_links_rows[j].link_sub_type,
+                                 datalinks_list['datalinks_records'][i]['data_links_rows'][j]['link_sub_type'])
+                self.assertEqual(m.datalinks_records[i].data_links_rows[j].url,
+                                 datalinks_list['datalinks_records'][i]['data_links_rows'][j]['url'])
+                self.assertEqual(m.datalinks_records[i].data_links_rows[j].title,
+                                 datalinks_list['datalinks_records'][i]['data_links_rows'][j]['title'])
+                self.assertEqual(m.datalinks_records[i].data_links_rows[j].item_count,
+                                 datalinks_list['datalinks_records'][i]['data_links_rows'][j]['item_count'])
 
 
 if __name__ == '__main__':

@@ -6,6 +6,8 @@ from .metrics_record import MetricsRecord
 from .metrics_record import MetricsRecordList
 from .nonbibrecord import NonBibRecord
 from .nonbibrecord import NonBibRecordList
+from .nonbibrecord import DataLinksRecord
+from .nonbibrecord import DataLinksRecordList
 from .orcid_claims import OrcidClaims
 from .status import Status
 from .citation_changes import CitationChanges, CitationChange
