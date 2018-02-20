@@ -29,6 +29,7 @@ class TestMsg(unittest.TestCase):
                                             'url': ['http://aa', 'http://bb'],
                                             'title': ['xx', 'yy'],
                                             'item_count':2}],
+                       'citation_count_norm': .2,
                        'esource': ['a', 's', 'd', 'f'],
                        'grants': ['g1', 'g2'],
                        'ned_objects': ['ned1', 'ned2'],
@@ -37,8 +38,7 @@ class TestMsg(unittest.TestCase):
                        'readers': ['r1', 'r2'],
                        'reference': ['ref1', 'ref2'],
                        'simbad_objects': ['s1', 's2'],
-                       'total_link_counts': 20,
-                       'citation_count_norm': .2,
+                       'total_link_counts': 20
                        }
         m = NonBibRecord(**nonbib_data)
         self.assertEqual(m.bibcode, nonbib_data['bibcode'])
