@@ -37,7 +37,8 @@ class TestMsg(unittest.TestCase):
                        'readers': ['r1', 'r2'],
                        'reference': ['ref1', 'ref2'],
                        'simbad_objects': ['s1', 's2'],
-                       'total_link_counts': 20
+                       'total_link_counts': 20,
+                       'citation_count_norm': .2,
                        }
         m = NonBibRecord(**nonbib_data)
         self.assertEqual(m.bibcode, nonbib_data['bibcode'])
@@ -53,6 +54,7 @@ class TestMsg(unittest.TestCase):
         self.assertEqual(m.simbad_objects, nonbib_data['simbad_objects'])
         self.assertEqual(m.total_link_counts, nonbib_data['total_link_counts'])
         self.assertEqual(m.data.data, nonbib_data['data']) # data is a special field name
+        self.assertAlmostEqual(m.citation_count_norm, nonbib_data['citation_count_norm'], places=5)
 
         for i in range(len(nonbib_data['data_links_rows'])):
             self.assertEqual(m.data_links_rows[i].link_type, nonbib_data['data_links_rows'][i]['link_type'])
