@@ -28,6 +28,7 @@ message DenormalizedRecord {
     string body = 18;
     repeated string citation = 19;
     uint64 citation_count = 20;
+    double citation_count_norm = 95;
     double cite_read_boost = 21;
     uint64 classic_factor = 22;
     repeated string comment = 23;
@@ -101,8 +102,9 @@ message DenormalizedRecord {
     repeated string vizier_facet = 71;
     string volume = 72;
     string year = 73;
+
     
-    // current highest id: 94
+    // current highest id: 95
     
     
 }

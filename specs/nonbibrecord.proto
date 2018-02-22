@@ -21,6 +21,7 @@ message NonBibRecord {
     repeated DataLinksRow data_links_rows = 19;
     Status status = 20;
     int32 norm_cites = 21;
+    float citation_count_norm = 22;
 }    
 
 

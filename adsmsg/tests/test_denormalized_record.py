@@ -62,6 +62,7 @@ class TestDenormalizedRecord(unittest.TestCase):
              'bibstem_facet': u'ApJ',
              'body': u"body body",
              'citation_count': 0,
+             'citation_count_norm': .2,
              'data_count': 20,
              'database': [u'astronomy'],
              'date': u'2015-12-01T00:00:00.000000Z',
