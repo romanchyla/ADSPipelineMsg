@@ -1,3 +1,7 @@
+from .augmentrecord import AugmentAffiliationRequestRecord
+from .augmentrecord import AugmentAffiliationRequestRecordList
+from .augmentrecord import AugmentAffiliationResponseRecord
+from .augmentrecord import AugmentAffiliationResponseRecordList
 from .bibrecord import BibRecord
 from .denormalized_record import DenormalizedRecord
 from .fulltext_requests import FulltextRequests
