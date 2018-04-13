@@ -1,0 +1,36 @@
+syntax = "proto3";
+import "status.proto";
+package adsmsg;
+
+// all fields required in the data frame that are sent to the classifier
+// send this to augmentation_pipeline to augment a single affiliation 
+message AugmentAffiliationRequestRecord {
+    string bibcode = 1;
+    Status status = 2;
+    string affiliation = 3;
+    string author = 4;
+    string sequence = 5;
+}
+
+// also support lists of the above
+message AugmentAffiliationRequestRecordList {
+	repeated AugmentAffiliationRequestRecord affiliation_requests = 1;
+	Status status = 2;
+}
+
+// after running classifier, this record is sent on to master
+message AugmentAffiliationResponseRecord {
+    string bibcode = 1;
+    Status status = 2;
+    string affiliation = 3;
+    string author = 4;
+    string sequence = 5;
+    string canonical_affiliation = 6;
+    string canonical_affiliation_id = 7;
+}
+
+// also support lists of the above
+message AugmentAffiliationResponseRecordList {
+	repeated AugmentAffiliationResponseRecord affiliation_responses = 1;
+	Status status = 2;
+}
