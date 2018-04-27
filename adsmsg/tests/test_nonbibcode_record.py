@@ -119,7 +119,14 @@ class TestMsg(unittest.TestCase):
                                  {'bibcode': '2017MNRAS.467.3556B',
                                   'data_links_rows': [
                                         {'link_type': 'PRESENTATION',  'link_sub_type': '',
-                                         'url': ['http://www.astro.lu.se/~alexey/animations.html'], 'title': [''], 'item_count':0}]}]
+                                         'url': ['1971ATsir.615....4D', '1974Afz....10..315D', '1971ATsir.621....7D',
+                                                 '1976Afz....12..665D', '1971ATsir.624....1D', '1983Afz....19..229D',
+                                                 '1983Ap.....19..134D', '1973ATsir.759....6D', '1984Afz....20..525D',
+                                                 '1984Ap.....20..290D', '1974ATsir.809....1D', '1974ATsir.809....2D',
+                                                 '1974ATsir.837....2D'],
+                                         'title': ['Part  1', 'Part  2', 'Part  3', 'Part  4', 'Part  5', 'Part  6', 'Part  7',
+                                                   'Part  8', 'Part  9', 'Part 10', 'Part 11', 'Part 12', 'Part 13'],
+                                         'item_count':0}]}]
         }
         m = DataLinksRecordList()
         m.status = datalinks_list['status']
@@ -140,7 +147,6 @@ class TestMsg(unittest.TestCase):
                                  datalinks_list['datalinks_records'][i]['data_links_rows'][j]['title'])
                 self.assertEqual(m.datalinks_records[i].data_links_rows[j].item_count,
                                  datalinks_list['datalinks_records'][i]['data_links_rows'][j]['item_count'])
-
 
 if __name__ == '__main__':
     unittest.main()
