@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='bibrecord.proto',
   package='adsmsg',
   syntax='proto3',
-  serialized_pb=_b('\n\x0f\x62ibrecord.proto\x12\x06\x61\x64smsg\x1a\x0cstatus.proto\"\xd6\x19\n\tBibRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x18\n\x10JSON_fingerprint\x18\x02 \x01(\t\x12,\n\x08metadata\x18\x03 \x01(\x0b\x32\x1a.adsmsg.BibRecord.Metadata\x12$\n\x04text\x18\x04 \x01(\x0b\x32\x16.adsmsg.BibRecord.Text\x12\x1e\n\x06status\x18\x05 \x01(\x0e\x32\x0e.adsmsg.Status\x1a\xf3\x15\n\x08Metadata\x12\x33\n\x07general\x18\x01 \x01(\x0b\x32\".adsmsg.BibRecord.Metadata.General\x12\x39\n\nproperties\x18\x02 \x01(\x0b\x32%.adsmsg.BibRecord.Metadata.Properties\x12\x39\n\nreferences\x18\x03 \x03(\x0b\x32%.adsmsg.BibRecord.Metadata.References\x12\x37\n\trelations\x18\x04 \x01(\x0b\x32$.adsmsg.BibRecord.Metadata.Relations\x1a\x9c\x0c\n\x07General\x12\x17\n\x0f\x61rxivcategories\x18\x01 \x03(\t\x12<\n\x08keywords\x18\x02 \x03(\x0b\x32*.adsmsg.BibRecord.Metadata.General.Keyword\x12\x38\n\x06titles\x18\x03 \x03(\x0b\x32(.adsmsg.BibRecord.Metadata.General.Title\x12>\n\tabstracts\x18\x04 \x03(\x0b\x32+.adsmsg.BibRecord.Metadata.General.Abstract\x12\x39\n\x06\x61uthor\x18\x05 \x03(\x0b\x32).adsmsg.BibRecord.Metadata.General.Author\x12\x44\n\x0cpublications\x18\x06 \x03(\x0b\x32..adsmsg.BibRecord.Metadata.General.Publication\x12G\n\x0f\x61ltpublications\x18\x07 \x03(\x0b\x32..adsmsg.BibRecord.Metadata.General.Publication\x12\x30\n\rconf_metadata\x18\x08 \x01(\x0b\x32\x19.adsmsg.BibRecord.Content\x12*\n\x07pubnote\x18\t \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12(\n\x05isbns\x18\n \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12(\n\x05issns\x18\x0b \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12&\n\x03\x64oi\x18\x0c \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12,\n\tcopyright\x18\r \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12*\n\x07\x63omment\x18\x0e \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x1a^\n\x07Keyword\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0f\n\x07\x63hannel\x18\x03 \x01(\t\x12\x10\n\x08original\x18\x04 \x01(\t\x12\x12\n\nnormalized\x18\x05 \x01(\t\x1a#\n\x05Title\x12\x0c\n\x04lang\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x1a\x36\n\x08\x41\x62stract\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0c\n\x04long\x18\x02 \x01(\t\x12\x0c\n\x04text\x18\x03 \x01(\t\x1a\xe2\x01\n\x06\x41uthor\x12\x0e\n\x06number\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x14\n\x0c\x61\x66\x66iliations\x18\x03 \x03(\t\x12\x0e\n\x06\x65mails\x18\x04 \x03(\t\x12\r\n\x05orcid\x18\x05 \x01(\t\x12\x42\n\x04name\x18\x06 \x01(\x0b\x32\x34.adsmsg.BibRecord.Metadata.General.Author.AuthorName\x1a\x41\n\nAuthorName\x12\x0e\n\x06native\x18\x01 \x01(\t\x12\x0f\n\x07western\x18\x02 \x01(\t\x12\x12\n\nnormalized\x18\x03 \x01(\t\x1a\x9f\x03\n\x0bPublication\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\t\x12\x11\n\tpage_last\x18\x03 \x01(\t\x12\x12\n\npage_range\x18\x04 \x01(\t\x12\x12\n\npage_count\x18\x05 \x01(\t\x12\x15\n\relectronic_id\x18\x06 \x01(\t\x12\x0e\n\x06volume\x18\x07 \x01(\t\x12\r\n\x05issue\x18\x08 \x01(\t\x12L\n\x04name\x18\t \x01(\x0b\x32>.adsmsg.BibRecord.Metadata.General.Publication.PublicationName\x12M\n\x05\x64\x61tes\x18\n \x03(\x0b\x32>.adsmsg.BibRecord.Metadata.General.Publication.PublicationDate\x1a\x32\n\x0fPublicationName\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x11\n\tcanonical\x18\x02 \x01(\t\x1a\x30\n\x0fPublicationDate\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\x1a\xbd\x03\n\nProperties\x12,\n\tdatabases\x18\x01 \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12*\n\x07\x64octype\x18\x02 \x01(\x0b\x32\x19.adsmsg.BibRecord.Content\x12,\n\tbibgroups\x18\x03 \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12-\n\nassociates\x18\x04 \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12/\n\x0c\x64\x61ta_sources\x18\x05 \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12\x30\n\rvizier_tables\x18\x06 \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12\x12\n\nopenaccess\x18\x07 \x01(\x08\x12\x13\n\x0bocrabstract\x18\x08 \x01(\x08\x12\x0f\n\x07private\x18\t \x01(\x08\x12\x10\n\x08refereed\x18\n \x01(\x08\x12\x16\n\x0e\x61\x64s_openaccess\x18\x0b \x01(\x08\x12\x19\n\x11\x65print_openaccess\x18\x0c \x01(\x08\x12\x16\n\x0epub_openaccess\x18\r \x01(\x08\x1am\n\nReferences\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0f\n\x07\x62ibcode\x18\x02 \x01(\t\x12\x0b\n\x03\x64oi\x18\x03 \x01(\t\x12\r\n\x05score\x18\x04 \x01(\t\x12\x11\n\textension\x18\x05 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x06 \x01(\t\x1a\xb4\x03\n\tRelations\x12@\n\tpreprints\x18\x01 \x03(\x0b\x32-.adsmsg.BibRecord.Metadata.Relations.Preprint\x12J\n\nalternates\x18\x02 \x03(\x0b\x32\x36.adsmsg.BibRecord.Metadata.Relations.AlternateRelation\x12\x38\n\x05links\x18\x03 \x03(\x0b\x32).adsmsg.BibRecord.Metadata.Relations.Link\x1a:\n\x08Preprint\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\r\n\x05\x65\x63ode\x18\x02 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\x1a\x42\n\x11\x41lternateRelation\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\x1a_\n\x04Link\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\r\n\x05title\x18\x04 \x01(\t\x12\r\n\x05\x63ount\x18\x05 \x01(\t\x12\x0e\n\x06\x61\x63\x63\x65ss\x18\x06 \x01(\t\x1a\x87\x02\n\x04Text\x12)\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x1b.adsmsg.BibRecord.Text.Body\x12?\n\x0f\x61\x63knowledgments\x18\x02 \x01(\x0b\x32&.adsmsg.BibRecord.Text.Acknowledgments\x1aL\n\x04\x42ody\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12\x10\n\x08language\x18\x03 \x01(\t\x12\x0f\n\x07modtime\x18\x04 \x01(\t\x1a\x45\n\x0f\x41\x63knowledgments\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12\x0f\n\x07modtime\x18\x03 \x01(\t\x1a*\n\x07\x43ontent\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\x0f\x62ibrecord.proto\x12\x06\x61\x64smsg\x1a\x0cstatus.proto\"\xd1\x1a\n\tBibRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x18\n\x10JSON_fingerprint\x18\x02 \x01(\t\x12,\n\x08metadata\x18\x03 \x01(\x0b\x32\x1a.adsmsg.BibRecord.Metadata\x12$\n\x04text\x18\x04 \x01(\x0b\x32\x16.adsmsg.BibRecord.Text\x12\x1e\n\x06status\x18\x05 \x01(\x0e\x32\x0e.adsmsg.Status\x1a\xee\x16\n\x08Metadata\x12\x33\n\x07general\x18\x01 \x01(\x0b\x32\".adsmsg.BibRecord.Metadata.General\x12\x39\n\nproperties\x18\x02 \x01(\x0b\x32%.adsmsg.BibRecord.Metadata.Properties\x12\x39\n\nreferences\x18\x03 \x03(\x0b\x32%.adsmsg.BibRecord.Metadata.References\x12\x37\n\trelations\x18\x04 \x01(\x0b\x32$.adsmsg.BibRecord.Metadata.Relations\x1a\x97\r\n\x07General\x12\x17\n\x0f\x61rxivcategories\x18\x01 \x03(\t\x12<\n\x08keywords\x18\x02 \x03(\x0b\x32*.adsmsg.BibRecord.Metadata.General.Keyword\x12\x38\n\x06titles\x18\x03 \x03(\x0b\x32(.adsmsg.BibRecord.Metadata.General.Title\x12>\n\tabstracts\x18\x04 \x03(\x0b\x32+.adsmsg.BibRecord.Metadata.General.Abstract\x12\x39\n\x06\x61uthor\x18\x05 \x03(\x0b\x32).adsmsg.BibRecord.Metadata.General.Author\x12\x44\n\x0cpublications\x18\x06 \x03(\x0b\x32..adsmsg.BibRecord.Metadata.General.Publication\x12G\n\x0f\x61ltpublications\x18\x07 \x03(\x0b\x32..adsmsg.BibRecord.Metadata.General.Publication\x12\x30\n\rconf_metadata\x18\x08 \x01(\x0b\x32\x19.adsmsg.BibRecord.Content\x12*\n\x07pubnote\x18\t \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12(\n\x05isbns\x18\n \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12(\n\x05issns\x18\x0b \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12&\n\x03\x64oi\x18\x0c \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12,\n\tcopyright\x18\r \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12*\n\x07\x63omment\x18\x0e \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12>\n\x0b\x62ook_author\x18\x0f \x03(\x0b\x32).adsmsg.BibRecord.Metadata.General.Author\x12\x39\n\x06\x65\x64itor\x18\x10 \x03(\x0b\x32).adsmsg.BibRecord.Metadata.General.Author\x1a^\n\x07Keyword\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0f\n\x07\x63hannel\x18\x03 \x01(\t\x12\x10\n\x08original\x18\x04 \x01(\t\x12\x12\n\nnormalized\x18\x05 \x01(\t\x1a#\n\x05Title\x12\x0c\n\x04lang\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x1a\x36\n\x08\x41\x62stract\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0c\n\x04long\x18\x02 \x01(\t\x12\x0c\n\x04text\x18\x03 \x01(\t\x1a\xe2\x01\n\x06\x41uthor\x12\x0e\n\x06number\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x14\n\x0c\x61\x66\x66iliations\x18\x03 \x03(\t\x12\x0e\n\x06\x65mails\x18\x04 \x03(\t\x12\r\n\x05orcid\x18\x05 \x01(\t\x12\x42\n\x04name\x18\x06 \x01(\x0b\x32\x34.adsmsg.BibRecord.Metadata.General.Author.AuthorName\x1a\x41\n\nAuthorName\x12\x0e\n\x06native\x18\x01 \x01(\t\x12\x0f\n\x07western\x18\x02 \x01(\t\x12\x12\n\nnormalized\x18\x03 \x01(\t\x1a\x9f\x03\n\x0bPublication\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\t\x12\x11\n\tpage_last\x18\x03 \x01(\t\x12\x12\n\npage_range\x18\x04 \x01(\t\x12\x12\n\npage_count\x18\x05 \x01(\t\x12\x15\n\relectronic_id\x18\x06 \x01(\t\x12\x0e\n\x06volume\x18\x07 \x01(\t\x12\r\n\x05issue\x18\x08 \x01(\t\x12L\n\x04name\x18\t \x01(\x0b\x32>.adsmsg.BibRecord.Metadata.General.Publication.PublicationName\x12M\n\x05\x64\x61tes\x18\n \x03(\x0b\x32>.adsmsg.BibRecord.Metadata.General.Publication.PublicationDate\x1a\x32\n\x0fPublicationName\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x11\n\tcanonical\x18\x02 \x01(\t\x1a\x30\n\x0fPublicationDate\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\x1a\xbd\x03\n\nProperties\x12,\n\tdatabases\x18\x01 \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12*\n\x07\x64octype\x18\x02 \x01(\x0b\x32\x19.adsmsg.BibRecord.Content\x12,\n\tbibgroups\x18\x03 \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12-\n\nassociates\x18\x04 \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12/\n\x0c\x64\x61ta_sources\x18\x05 \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12\x30\n\rvizier_tables\x18\x06 \x03(\x0b\x32\x19.adsmsg.BibRecord.Content\x12\x12\n\nopenaccess\x18\x07 \x01(\x08\x12\x13\n\x0bocrabstract\x18\x08 \x01(\x08\x12\x0f\n\x07private\x18\t \x01(\x08\x12\x10\n\x08refereed\x18\n \x01(\x08\x12\x16\n\x0e\x61\x64s_openaccess\x18\x0b \x01(\x08\x12\x19\n\x11\x65print_openaccess\x18\x0c \x01(\x08\x12\x16\n\x0epub_openaccess\x18\r \x01(\x08\x1am\n\nReferences\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0f\n\x07\x62ibcode\x18\x02 \x01(\t\x12\x0b\n\x03\x64oi\x18\x03 \x01(\t\x12\r\n\x05score\x18\x04 \x01(\t\x12\x11\n\textension\x18\x05 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x06 \x01(\t\x1a\xb4\x03\n\tRelations\x12@\n\tpreprints\x18\x01 \x03(\x0b\x32-.adsmsg.BibRecord.Metadata.Relations.Preprint\x12J\n\nalternates\x18\x02 \x03(\x0b\x32\x36.adsmsg.BibRecord.Metadata.Relations.AlternateRelation\x12\x38\n\x05links\x18\x03 \x03(\x0b\x32).adsmsg.BibRecord.Metadata.Relations.Link\x1a:\n\x08Preprint\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\r\n\x05\x65\x63ode\x18\x02 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\x1a\x42\n\x11\x41lternateRelation\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\x1a_\n\x04Link\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\r\n\x05title\x18\x04 \x01(\t\x12\r\n\x05\x63ount\x18\x05 \x01(\t\x12\x0e\n\x06\x61\x63\x63\x65ss\x18\x06 \x01(\t\x1a\x87\x02\n\x04Text\x12)\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x1b.adsmsg.BibRecord.Text.Body\x12?\n\x0f\x61\x63knowledgments\x18\x02 \x01(\x0b\x32&.adsmsg.BibRecord.Text.Acknowledgments\x1aL\n\x04\x42ody\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12\x10\n\x08language\x18\x03 \x01(\t\x12\x0f\n\x07modtime\x18\x04 \x01(\t\x1a\x45\n\x0f\x41\x63knowledgments\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x10\n\x08provider\x18\x02 \x01(\t\x12\x0f\n\x07modtime\x18\x03 \x01(\t\x1a*\n\x07\x43ontent\x12\x0e\n\x06origin\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\tb\x06proto3')
   ,
   dependencies=[status__pb2.DESCRIPTOR,])
 
@@ -81,8 +81,8 @@ _BIBRECORD_METADATA_GENERAL_KEYWORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1186,
-  serialized_end=1280,
+  serialized_start=1309,
+  serialized_end=1403,
 )
 
 _BIBRECORD_METADATA_GENERAL_TITLE = _descriptor.Descriptor(
@@ -118,8 +118,8 @@ _BIBRECORD_METADATA_GENERAL_TITLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1282,
-  serialized_end=1317,
+  serialized_start=1405,
+  serialized_end=1440,
 )
 
 _BIBRECORD_METADATA_GENERAL_ABSTRACT = _descriptor.Descriptor(
@@ -162,8 +162,8 @@ _BIBRECORD_METADATA_GENERAL_ABSTRACT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1319,
-  serialized_end=1373,
+  serialized_start=1442,
+  serialized_end=1496,
 )
 
 _BIBRECORD_METADATA_GENERAL_AUTHOR_AUTHORNAME = _descriptor.Descriptor(
@@ -206,8 +206,8 @@ _BIBRECORD_METADATA_GENERAL_AUTHOR_AUTHORNAME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1537,
-  serialized_end=1602,
+  serialized_start=1660,
+  serialized_end=1725,
 )
 
 _BIBRECORD_METADATA_GENERAL_AUTHOR = _descriptor.Descriptor(
@@ -271,8 +271,8 @@ _BIBRECORD_METADATA_GENERAL_AUTHOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1376,
-  serialized_end=1602,
+  serialized_start=1499,
+  serialized_end=1725,
 )
 
 _BIBRECORD_METADATA_GENERAL_PUBLICATION_PUBLICATIONNAME = _descriptor.Descriptor(
@@ -308,8 +308,8 @@ _BIBRECORD_METADATA_GENERAL_PUBLICATION_PUBLICATIONNAME = _descriptor.Descriptor
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1920,
-  serialized_end=1970,
+  serialized_start=2043,
+  serialized_end=2093,
 )
 
 _BIBRECORD_METADATA_GENERAL_PUBLICATION_PUBLICATIONDATE = _descriptor.Descriptor(
@@ -345,8 +345,8 @@ _BIBRECORD_METADATA_GENERAL_PUBLICATION_PUBLICATIONDATE = _descriptor.Descriptor
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1972,
-  serialized_end=2020,
+  serialized_start=2095,
+  serialized_end=2143,
 )
 
 _BIBRECORD_METADATA_GENERAL_PUBLICATION = _descriptor.Descriptor(
@@ -438,8 +438,8 @@ _BIBRECORD_METADATA_GENERAL_PUBLICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1605,
-  serialized_end=2020,
+  serialized_start=1728,
+  serialized_end=2143,
 )
 
 _BIBRECORD_METADATA_GENERAL = _descriptor.Descriptor(
@@ -547,6 +547,20 @@ _BIBRECORD_METADATA_GENERAL = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='book_author', full_name='adsmsg.BibRecord.Metadata.General.book_author', index=14,
+      number=15, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='editor', full_name='adsmsg.BibRecord.Metadata.General.editor', index=15,
+      number=16, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -560,7 +574,7 @@ _BIBRECORD_METADATA_GENERAL = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=456,
-  serialized_end=2020,
+  serialized_end=2143,
 )
 
 _BIBRECORD_METADATA_PROPERTIES = _descriptor.Descriptor(
@@ -673,8 +687,8 @@ _BIBRECORD_METADATA_PROPERTIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2023,
-  serialized_end=2468,
+  serialized_start=2146,
+  serialized_end=2591,
 )
 
 _BIBRECORD_METADATA_REFERENCES = _descriptor.Descriptor(
@@ -738,8 +752,8 @@ _BIBRECORD_METADATA_REFERENCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2470,
-  serialized_end=2579,
+  serialized_start=2593,
+  serialized_end=2702,
 )
 
 _BIBRECORD_METADATA_RELATIONS_PREPRINT = _descriptor.Descriptor(
@@ -782,8 +796,8 @@ _BIBRECORD_METADATA_RELATIONS_PREPRINT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2795,
-  serialized_end=2853,
+  serialized_start=2918,
+  serialized_end=2976,
 )
 
 _BIBRECORD_METADATA_RELATIONS_ALTERNATERELATION = _descriptor.Descriptor(
@@ -826,8 +840,8 @@ _BIBRECORD_METADATA_RELATIONS_ALTERNATERELATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2855,
-  serialized_end=2921,
+  serialized_start=2978,
+  serialized_end=3044,
 )
 
 _BIBRECORD_METADATA_RELATIONS_LINK = _descriptor.Descriptor(
@@ -891,8 +905,8 @@ _BIBRECORD_METADATA_RELATIONS_LINK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2923,
-  serialized_end=3018,
+  serialized_start=3046,
+  serialized_end=3141,
 )
 
 _BIBRECORD_METADATA_RELATIONS = _descriptor.Descriptor(
@@ -935,8 +949,8 @@ _BIBRECORD_METADATA_RELATIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2582,
-  serialized_end=3018,
+  serialized_start=2705,
+  serialized_end=3141,
 )
 
 _BIBRECORD_METADATA = _descriptor.Descriptor(
@@ -987,7 +1001,7 @@ _BIBRECORD_METADATA = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=215,
-  serialized_end=3018,
+  serialized_end=3141,
 )
 
 _BIBRECORD_TEXT_BODY = _descriptor.Descriptor(
@@ -1037,8 +1051,8 @@ _BIBRECORD_TEXT_BODY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3137,
-  serialized_end=3213,
+  serialized_start=3260,
+  serialized_end=3336,
 )
 
 _BIBRECORD_TEXT_ACKNOWLEDGMENTS = _descriptor.Descriptor(
@@ -1081,8 +1095,8 @@ _BIBRECORD_TEXT_ACKNOWLEDGMENTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3215,
-  serialized_end=3284,
+  serialized_start=3338,
+  serialized_end=3407,
 )
 
 _BIBRECORD_TEXT = _descriptor.Descriptor(
@@ -1118,8 +1132,8 @@ _BIBRECORD_TEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3021,
-  serialized_end=3284,
+  serialized_start=3144,
+  serialized_end=3407,
 )
 
 _BIBRECORD_CONTENT = _descriptor.Descriptor(
@@ -1155,8 +1169,8 @@ _BIBRECORD_CONTENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3286,
-  serialized_end=3328,
+  serialized_start=3409,
+  serialized_end=3451,
 )
 
 _BIBRECORD = _descriptor.Descriptor(
@@ -1214,7 +1228,7 @@ _BIBRECORD = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=42,
-  serialized_end=3328,
+  serialized_end=3451,
 )
 
 _BIBRECORD_METADATA_GENERAL_KEYWORD.containing_type = _BIBRECORD_METADATA_GENERAL
@@ -1241,6 +1255,8 @@ _BIBRECORD_METADATA_GENERAL.fields_by_name['issns'].message_type = _BIBRECORD_CO
 _BIBRECORD_METADATA_GENERAL.fields_by_name['doi'].message_type = _BIBRECORD_CONTENT
 _BIBRECORD_METADATA_GENERAL.fields_by_name['copyright'].message_type = _BIBRECORD_CONTENT
 _BIBRECORD_METADATA_GENERAL.fields_by_name['comment'].message_type = _BIBRECORD_CONTENT
+_BIBRECORD_METADATA_GENERAL.fields_by_name['book_author'].message_type = _BIBRECORD_METADATA_GENERAL_AUTHOR
+_BIBRECORD_METADATA_GENERAL.fields_by_name['editor'].message_type = _BIBRECORD_METADATA_GENERAL_AUTHOR
 _BIBRECORD_METADATA_GENERAL.containing_type = _BIBRECORD_METADATA
 _BIBRECORD_METADATA_PROPERTIES.fields_by_name['databases'].message_type = _BIBRECORD_CONTENT
 _BIBRECORD_METADATA_PROPERTIES.fields_by_name['doctype'].message_type = _BIBRECORD_CONTENT

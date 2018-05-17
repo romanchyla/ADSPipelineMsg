@@ -20,6 +20,8 @@ message DenormalizedRecord {
     repeated string author_facet_hier = 11;
     //repeated string author_native = 10; // Waiting for montysolr
     repeated string author_norm = 12;
+    repeated string book_author = 96;
+    repeated string editor = 97;
     string bibcode = 13;
     repeated string bibgroup = 14;
     repeated string bibgroup_facet = 15;
@@ -104,7 +106,7 @@ message DenormalizedRecord {
     string year = 73;
 
     
-    // current highest id: 95
+    // current highest id: 97
     
     
 }
