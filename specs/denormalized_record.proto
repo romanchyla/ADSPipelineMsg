@@ -104,9 +104,9 @@ message DenormalizedRecord {
     repeated string vizier_facet = 71;
     string volume = 72;
     string year = 73;
-
+    string series = 98;
     
-    // current highest id: 97
+    // current highest id: 98
     
     
 }

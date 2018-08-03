@@ -87,6 +87,7 @@ message BibRecord {
                 string issue = 8;
                 PublicationName name = 9;
                 repeated PublicationDate dates = 10;
+                string series = 11;
 
                 message PublicationName {
                     string type = 1;
