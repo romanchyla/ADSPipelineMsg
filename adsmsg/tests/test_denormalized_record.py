@@ -114,7 +114,7 @@ class TestDenormalizedRecord(unittest.TestCase):
              'title': [u'Ultraviolet Radiative Transfer Modeling of Nearby Galaxies'],
              'volume': u'815',
              'year': u'2015',
-             'page_count': 14}
+             'series': u'series name here'}
 
         r = DenormalizedRecord(**solr_record)
         

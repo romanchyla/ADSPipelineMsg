@@ -37,6 +37,8 @@ message BibRecord {
             repeated Content doi = 12;
             repeated Content copyright = 13;
             repeated Content comment = 14;
+            repeated Author book_author = 15;
+            repeated Author editor = 16;
 
             message Keyword {
                 string origin = 1;
@@ -85,6 +87,7 @@ message BibRecord {
                 string issue = 8;
                 PublicationName name = 9;
                 repeated PublicationDate dates = 10;
+                string series = 11;
 
                 message PublicationName {
                     string type = 1;
