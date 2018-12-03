@@ -13,29 +13,30 @@ class TestMsg(unittest.TestCase):
         unittest.TestCase.tearDown(self)
 
     def test_affiliation_request(self):
-        d = {'bibcode': '2003ASPC..295..361M',
-                  'status': 2,
-                  'affiliation': 'University of Deleware',
-                  'author': 'Stephen McDonald',
-                  'sequence': '1/2'}
+        d = {'bibcode': '1983ESASP.201...47K',
+             'status': 2,
+             'aff':  [
+                "Harvard-Smithsonian Center for Astrophysics, Cambridge, MA."
+             ],
+             "author": [
+                "Kurtz, M. J."
+             ]}
         a = AugmentAffiliationRequestRecord(**d)
         self.assertEqual(a.bibcode, d['bibcode'])
         self.assertEqual(a.status, d['status'])
-        self.assertEqual(a.affiliation, d['affiliation'])
+        self.assertEqual(a.aff, d['aff'])
         self.assertEqual(a.author, d['author'])
-        self.assertEqual(a.sequence, d['sequence'])
+
 
     def test_affiliation_request_list(self):
-        d_list = [{'bibcode': '2003ASPC..295..361M',
-                   'status': 2,
-                   'affiliation': 'University of Deleware',
-                   'author': 'Stephen McDonald',
-                   'sequence': '1/2'},
-                  {'bibcode': '2003ASPC..295..361Z',
-                  'status': 2,
-                  'affiliation': 'University of Zeleware',
-                  'author': 'Ztephen McDonald',
-                  'sequence': '2/2'}]
+        d_list = [{'bibcode': '1983ESASP.201...47K',
+             'status': 2,
+             'aff':  [
+                "Harvard-Smithsonian Center for Astrophysics, Cambridge, MA."
+             ],
+             "author": [
+                "Kurtz, M. J."
+             ]}]
         m = AugmentAffiliationRequestRecordList()
         m.status = 2
         for r in d_list:
@@ -43,42 +44,66 @@ class TestMsg(unittest.TestCase):
         for i in range(len(d_list)):
             self.assertEqual(m.affiliation_requests[i].bibcode, d_list[i]['bibcode'])
             self.assertEqual(m.affiliation_requests[i].status, d_list[i]['status'])
-            self.assertEqual(m.affiliation_requests[i].affiliation, d_list[i]['affiliation'])
+            self.assertEqual(m.affiliation_requests[i].aff, d_list[i]['aff'])
             self.assertEqual(m.affiliation_requests[i].author, d_list[i]['author'])
-            self.assertEqual(m.affiliation_requests[i].sequence, d_list[i]['sequence'])
-
 
     def test_affiliation_response(self):
-        d = {'bibcode': '2003ASPC..295..361M',
+        d = {'bibcode': '1983ESASP.201...47K',
              'status': 2,
-             'affiliation': 'University of Deleware',
-             'author': 'Stephen McDonald',
-             'sequence': '1/2',
-             'canonical_affiliation': 'U of D',
-             'canonical_affiliation_id': '1'}
+             'aff':  [
+                "Harvard-Smithsonian Center for Astrophysics, Cambridge, MA."
+             ],
+             "author": [
+                "Kurtz, M. J."
+             ],
+             "aff_abbrev": [
+                "CfA"
+            ], 
+            "aff_canonical": [
+                "Harvard Smithsonian Center for Astrophysics"
+            ], 
+            "aff_facet_hier": [
+                "0/Harvard U", 
+                "1/Harvard U/CfA", 
+                "0/SI", 
+                "1/SI/CfA"
+            ],
+            "aff_id": ['placeholder']
+        }
         a = AugmentAffiliationResponseRecord(**d)
         self.assertEqual(a.bibcode, d['bibcode'])
         self.assertEqual(a.status, d['status'])
-        self.assertEqual(a.affiliation, d['affiliation'])
+        self.assertEqual(a.aff, d['aff'])
         self.assertEqual(a.author, d['author'])
-        self.assertEqual(a.sequence, d['sequence'])
-        self.assertEqual(a.canonical_affiliation, d['canonical_affiliation'])
-        self.assertEqual(a.canonical_affiliation_id, d['canonical_affiliation_id'])        
+        self.assertEqual(a.aff_abbrev, d['aff_abbrev'])
+        self.assertEqual(a.aff_canonical, d['aff_canonical'])
+        self.assertEqual(a.aff_facet_hier, d['aff_facet_hier'])
+        self.assertEqual(a.aff_id, d['aff_id'])
+        
     def test_affiliation_response_list(self):
-        d_list = [{'bibcode': '2003ASPC..295..361M',
-                   'status': 2,
-                   'affiliation': 'University of Deleware',
-                   'author': 'Stephen McDonald',
-                   'sequence': '1/2',
-                   'canonical_affiliation': 'U of D',
-                   'canonical_affiliation_id': '1'},
-                  {'bibcode': '2003ASPC..295..361Z',
-                   'status': 2,
-                   'affiliation': 'University of Zeleware',
-                   'author': 'Ztephen McDonald',
-                   'sequence': '2/2',
-                   'canonical_affiliation': 'U of Z',
-                   'canonical_affiliation_id': '2'}]
+        d = {'bibcode': '1983ESASP.201...47K',
+             'status': 2,
+             'aff':  [
+                "Harvard-Smithsonian Center for Astrophysics, Cambridge, MA."
+             ],
+             "author": [
+                "Kurtz, M. J."
+             ],
+             "aff_abbrev": [
+                "CfA"
+            ], 
+            "aff_canonical": [
+                "Harvard Smithsonian Center for Astrophysics"
+            ], 
+            "aff_facet_hier": [
+                "0/Harvard U", 
+                "1/Harvard U/CfA", 
+                "0/SI", 
+                "1/SI/CfA"
+            ],
+            "aff_id": ['placeholder']
+        }
+        d_list = [d]
         m = AugmentAffiliationResponseRecordList()
         m.status = 2
         for r in d_list:
@@ -86,9 +111,10 @@ class TestMsg(unittest.TestCase):
         for i in range(len(d_list)):
             self.assertEqual(m.affiliation_responses[i].bibcode, d_list[i]['bibcode'])
             self.assertEqual(m.affiliation_responses[i].status, d_list[i]['status'])
-            self.assertEqual(m.affiliation_responses[i].affiliation, d_list[i]['affiliation'])
+            self.assertEqual(m.affiliation_responses[i].aff, d_list[i]['aff'])
             self.assertEqual(m.affiliation_responses[i].author, d_list[i]['author'])
-            self.assertEqual(m.affiliation_responses[i].sequence, d_list[i]['sequence'])
-            self.assertEqual(m.affiliation_responses[i].canonical_affiliation, d_list[i]['canonical_affiliation'])
-            self.assertEqual(m.affiliation_responses[i].canonical_affiliation_id, d_list[i]['canonical_affiliation_id'])
+            self.assertEqual(m.affiliation_responses[i].aff_abbrev, d_list[i]['aff_abbrev'])
+            self.assertEqual(m.affiliation_responses[i].aff_canonical, d_list[i]['aff_canonical'])
+            self.assertEqual(m.affiliation_responses[i].aff_facet_hier, d_list[i]['aff_facet_hier'])
+            self.assertEqual(m.affiliation_responses[i].aff_id, d_list[i]['aff_id'])
             

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='augmentrecord.proto',
   package='adsmsg',
   syntax='proto3',
-  serialized_pb=_b('\n\x13\x61ugmentrecord.proto\x12\x06\x61\x64smsg\x1a\x0cstatus.proto\"\x89\x01\n\x1f\x41ugmentAffiliationRequestRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x1e\n\x06status\x18\x02 \x01(\x0e\x32\x0e.adsmsg.Status\x12\x13\n\x0b\x61\x66\x66iliation\x18\x03 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x04 \x01(\t\x12\x10\n\x08sequence\x18\x05 \x01(\t\"\x8c\x01\n#AugmentAffiliationRequestRecordList\x12\x45\n\x14\x61\x66\x66iliation_requests\x18\x01 \x03(\x0b\x32\'.adsmsg.AugmentAffiliationRequestRecord\x12\x1e\n\x06status\x18\x02 \x01(\x0e\x32\x0e.adsmsg.Status\"\xcb\x01\n AugmentAffiliationResponseRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x1e\n\x06status\x18\x02 \x01(\x0e\x32\x0e.adsmsg.Status\x12\x13\n\x0b\x61\x66\x66iliation\x18\x03 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x04 \x01(\t\x12\x10\n\x08sequence\x18\x05 \x01(\t\x12\x1d\n\x15\x63\x61nonical_affiliation\x18\x06 \x01(\t\x12 \n\x18\x63\x61nonical_affiliation_id\x18\x07 \x01(\t\"\x8f\x01\n$AugmentAffiliationResponseRecordList\x12G\n\x15\x61\x66\x66iliation_responses\x18\x01 \x03(\x0b\x32(.adsmsg.AugmentAffiliationResponseRecord\x12\x1e\n\x06status\x18\x02 \x01(\x0e\x32\x0e.adsmsg.Statusb\x06proto3')
+  serialized_pb=_b('\n\x13\x61ugmentrecord.proto\x12\x06\x61\x64smsg\x1a\x0cstatus.proto\"o\n\x1f\x41ugmentAffiliationRequestRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x1e\n\x06status\x18\x02 \x01(\x0e\x32\x0e.adsmsg.Status\x12\x0b\n\x03\x61\x66\x66\x18\x03 \x03(\t\x12\x0e\n\x06\x61uthor\x18\x04 \x03(\t\"\x8c\x01\n#AugmentAffiliationRequestRecordList\x12\x45\n\x14\x61\x66\x66iliation_requests\x18\x01 \x03(\x0b\x32\'.adsmsg.AugmentAffiliationRequestRecord\x12\x1e\n\x06status\x18\x02 \x01(\x0e\x32\x0e.adsmsg.Status\"\xd6\x01\n AugmentAffiliationResponseRecord\x12\x0f\n\x07\x62ibcode\x18\x01 \x01(\t\x12\x1e\n\x06status\x18\x02 \x01(\x0e\x32\x0e.adsmsg.Status\x12\x0b\n\x03\x61\x66\x66\x18\x03 \x03(\t\x12\x0e\n\x06\x61uthor\x18\x04 \x03(\t\x12\x12\n\naff_abbrev\x18\x05 \x03(\t\x12\x15\n\raff_canonical\x18\x06 \x03(\t\x12\x11\n\taff_facet\x18\x07 \x03(\t\x12\x16\n\x0e\x61\x66\x66_facet_hier\x18\x08 \x03(\t\x12\x0e\n\x06\x61\x66\x66_id\x18\t \x03(\t\"\x8f\x01\n$AugmentAffiliationResponseRecordList\x12G\n\x15\x61\x66\x66iliation_responses\x18\x01 \x03(\x0b\x32(.adsmsg.AugmentAffiliationResponseRecord\x12\x1e\n\x06status\x18\x02 \x01(\x0e\x32\x0e.adsmsg.Statusb\x06proto3')
   ,
   dependencies=[status__pb2.DESCRIPTOR,])
 
@@ -49,23 +49,16 @@ _AUGMENTAFFILIATIONREQUESTRECORD = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='affiliation', full_name='adsmsg.AugmentAffiliationRequestRecord.affiliation', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='aff', full_name='adsmsg.AugmentAffiliationRequestRecord.aff', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='author', full_name='adsmsg.AugmentAffiliationRequestRecord.author', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='sequence', full_name='adsmsg.AugmentAffiliationRequestRecord.sequence', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -81,8 +74,8 @@ _AUGMENTAFFILIATIONREQUESTRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=46,
-  serialized_end=183,
+  serialized_start=45,
+  serialized_end=156,
 )
 
 
@@ -119,8 +112,8 @@ _AUGMENTAFFILIATIONREQUESTRECORDLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=186,
-  serialized_end=326,
+  serialized_start=159,
+  serialized_end=299,
 )
 
 
@@ -146,37 +139,51 @@ _AUGMENTAFFILIATIONRESPONSERECORD = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='affiliation', full_name='adsmsg.AugmentAffiliationResponseRecord.affiliation', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='aff', full_name='adsmsg.AugmentAffiliationResponseRecord.aff', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='author', full_name='adsmsg.AugmentAffiliationResponseRecord.author', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='sequence', full_name='adsmsg.AugmentAffiliationResponseRecord.sequence', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='aff_abbrev', full_name='adsmsg.AugmentAffiliationResponseRecord.aff_abbrev', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='canonical_affiliation', full_name='adsmsg.AugmentAffiliationResponseRecord.canonical_affiliation', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='aff_canonical', full_name='adsmsg.AugmentAffiliationResponseRecord.aff_canonical', index=5,
+      number=6, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='canonical_affiliation_id', full_name='adsmsg.AugmentAffiliationResponseRecord.canonical_affiliation_id', index=6,
-      number=7, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='aff_facet', full_name='adsmsg.AugmentAffiliationResponseRecord.aff_facet', index=6,
+      number=7, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='aff_facet_hier', full_name='adsmsg.AugmentAffiliationResponseRecord.aff_facet_hier', index=7,
+      number=8, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='aff_id', full_name='adsmsg.AugmentAffiliationResponseRecord.aff_id', index=8,
+      number=9, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -192,8 +199,8 @@ _AUGMENTAFFILIATIONRESPONSERECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=532,
+  serialized_start=302,
+  serialized_end=516,
 )
 
 
@@ -230,8 +237,8 @@ _AUGMENTAFFILIATIONRESPONSERECORDLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=535,
-  serialized_end=678,
+  serialized_start=519,
+  serialized_end=662,
 )
 
 _AUGMENTAFFILIATIONREQUESTRECORD.fields_by_name['status'].enum_type = status__pb2._STATUS
