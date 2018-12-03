@@ -2,14 +2,13 @@ syntax = "proto3";
 import "status.proto";
 package adsmsg;
 
-// all fields required in the data frame that are sent to the classifier
-// send this to augmentation_pipeline to augment a single affiliation 
+// all fields required in the data frame that are sent to aff augmentation
+// send this to augmentation_pipeline to augment all authors for a bibcode
 message AugmentAffiliationRequestRecord {
     string bibcode = 1;
     Status status = 2;
-    string affiliation = 3;
-    string author = 4;
-    string sequence = 5;
+    repeated string aff = 3;
+    repeated string author = 4;
 }
 
 // also support lists of the above
@@ -18,15 +17,20 @@ message AugmentAffiliationRequestRecordList {
 	Status status = 2;
 }
 
-// after running classifier, this record is sent on to master
+// the aff augmentation eventually sends this record to master
 message AugmentAffiliationResponseRecord {
+    // data sent for augmentation
     string bibcode = 1;
     Status status = 2;
-    string affiliation = 3;
-    string author = 4;
-    string sequence = 5;
-    string canonical_affiliation = 6;
-    string canonical_affiliation_id = 7;
+    repeated string aff = 3;
+    repeated string author = 4;
+    
+    // calculated values for solr fields
+    repeated string aff_abbrev = 5;
+    repeated string aff_canonical = 6;
+    repeated string aff_facet = 7;
+    repeated string aff_facet_hier = 8;
+    repeated string aff_id = 9;
 }
 
 // also support lists of the above
