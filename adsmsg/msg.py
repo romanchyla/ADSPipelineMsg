@@ -40,7 +40,11 @@ class Msg(object):
         return getattr(self._data, key)
 
     def __setattr__(self, key, value):
-        return setattr(self.__dict__['_data'], key, value)
+        o = getattr(self._data, key)
+        if hasattr(o, 'CopyFrom'):
+            return o.CopyFrom(value) # it's an embedded object
+        else:
+            return setattr(self.__dict__['_data'], key, value)
 
 
     @classmethod

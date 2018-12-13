@@ -1,0 +1,59 @@
+syntax = "proto3";
+import "status.proto";
+import "google/protobuf/timestamp.proto";
+
+package adsmsg;
+
+// this is the message travelling inside our pipelines; if an object
+// should be created, you'll typically set these two arguments
+//   status = new
+//   url = target url
+//
+// Then, something will work on building the object and will fill
+// the other parameters:
+//   - value
+//   - ctype
+//   - timestamps
+
+
+  
+message TurboBeeMsg {
+
+    enum CType {
+        unknown = 0; /* default */
+        html = 1;
+        text = 2;
+        json = 3;
+        binary = 4;
+        png = 5;
+      }
+    
+    // If set, then the object will be stored (on the remote side)
+    // using this key
+    
+    string qid = 1;
+    
+    // status of this object (we are re-using generic status)
+    // corresponds to actions to be taken on the object; this attr
+    // is only useful for pipelines
+    
+    Status status = 2;
+    
+    // remote resource to fetch/cache; can be a full url incl
+    // domain; or just path (in which case default domain will
+    // be set)
+    
+    string target = 3;
+    
+    google.protobuf.Timestamp created = 4;
+    google.protobuf.Timestamp updated = 5;
+    google.protobuf.Timestamp expires = 6;
+    google.protobuf.Timestamp eol = 7;
+    
+    // user account id
+    int32 owner = 8;
+    
+    CType ctype = 9;
+    bytes value = 10;
+    
+}

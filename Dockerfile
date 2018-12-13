@@ -21,7 +21,7 @@ RUN pip install --upgrade pip
 
 RUN git clone https://github.com/adsabs/ADSPipelineMsg /app
 WORKDIR /app
-RUN pip install -r requirements.txt
+RUN pip install --ignore-installed six -r requirements.txt
 
 CMD /bin/bash
 
